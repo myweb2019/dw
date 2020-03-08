@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/attention.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">我的关注</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nav">
+				<a href="#services" class="active">服务</a>
+				<a href="#technician">技师</a>
+				<a href="#store">店铺</a>
+			</div>
+			<div class="services active" id="services">
+				<!-- 没有商品关注 -->
+				<div class="no-attention" style="display: none;">
+					<img src="./images/gz.png" alt="">
+					<p>好服务期待你的发现</p>
+				</div>
+				<!-- 关注了有内容 -->
+				<div class="attention">
+					<ul>
+						<li>
+							<img src="./images/fw/Household%20cleaning01.jpg" alt="">
+							<p>到位直选<span>好评95%</span></p>
+							<span id="services-cancel">x</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 技师 -->
+			<div class="technician" id="technician">
+				<!-- 没有商品关注 -->
+				<div class="no-attention" >
+					<img src="./images/jis_03.gif" alt="">
+					<p>暂无关注技师</p>
+				</div>
+				<!-- 关注了有内容 -->
+				<div class="attention" style="display: none;">
+					<ul>
+						<li>
+							<img src="./images/fw/Household%20cleaning01.jpg" alt="">
+							<p>到位直选<span>好评95%</span></p>
+							<span>x</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 店铺 -->
+			<div class="store" id="store">
+				<!-- 没有商品关注 -->
+				<div class="no-attention">
+					<img src="./images/shop_03.gif" alt="">
+					<p>期待你的光顾</p>
+				</div>
+				<!-- 关注了有内容 -->
+				<div class="attention" style="display: none;">
+					<ul>
+						<li>
+							<img src="./images/fw/Household%20cleaning01.jpg" alt="">
+							<p>到位直选<span>好评95%</span></p>
+							<span>x</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.js"></script>
+	<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/attention.js" type="text/javascript" charset="utf-8"></script>
+</html>
