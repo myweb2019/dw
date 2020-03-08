@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/per_operation.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人信息</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="photo">
+						头像
+						<img src="images/photo.png" class="mui-pull-right" id="photo_img">
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						昵称
+						<input class="mui-pull-right" type="text" value="u29550480" placeholder="输入昵称(2-10个字)"></input>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" id="sex">
+					<a class="mui-navigate-right">性别
+						<span class="mui-pull-right text"></span>
+					</a>
+				</li>
+			</ul>
+			<div class="phone">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">手机号码
+							<i class="verify">已验证</i>
+							<span class="mui-pull-right phone_number">15708260480</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="btn">保存</button>
+		</div>
+		<!-- 选择头像遮罩 -->
+		<!-- <div class="mui-backdrop">
+			<div class="xu_sex">
+				<button type="button" class="but">男</button>
+				<button type="button" class="but">女</button>
+				<button type="button" class="but" id="cancel">取消</button>
+			</div>
+		</div> -->
+		<script src="js/mui.js"></script>
+		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/per_operation.js"></script>
+	</body>
+
+</html>

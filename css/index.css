@@ -1,0 +1,36 @@
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #e9483e;
+}
+.mui-bar-tab .mui-tab-item {
+    color: #4c4c4c;
+	font-weight: bold;
+}
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+    padding-top: 5px;
+}
+.mui-bar .mui-icon {
+    font-size: 17px;
+	font-weight: bold;
+}
+.mui-bar-tab .mui-tab-item .mui-icon {
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+.mui-bar {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+    box-shadow: 0 0 1px rgba(0,0,0,.85);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}

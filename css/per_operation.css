@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* 通用,重置 */
+.mui-table-view-cell > a:not(.mui-btn) {
+    overflow: visible;
+}
+input[type='button']:enabled:active, input[type='button'].mui-active:enabled, input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled, input[type='reset']:enabled:active, input[type='reset'].mui-active:enabled, button:enabled:active, button.mui-active:enabled, .mui-btn:enabled:active, .mui-btn.mui-active:enabled {
+    color: #fff;
+    background-color: #e94840;
+}
+.mui-table-view-cell:after {
+    left: 0;
+	background: #e5e5e5;
+}
+.mui-navigate-right:after, .mui-push-right:after {
+    right: 0;
+    content: '\e583';
+}
+/* 头部 */
+.mui-bar-nav{
+	background: #FFFFFF;
+	box-shadow: none;
+	border-bottom:1px solid #d1d1d1;
+	box-sizing: border-box;
+}
+.mui-bar-nav a{
+	color: #e14c46;
+}
+.mui-title{
+	font-size: 0.65rem;
+}
+
+/* 列表 */
+.mui-content > .mui-table-view:first-child {
+    margin: 0;
+}
+.mui-table-view-cell > a:not(.mui-btn).mui-active
+{
+    background-color: transparent;
+}
+#photo img{
+	margin-right: 0.75rem;
+	width: 1.85rem;
+	height: 1.85rem;
+	border-radius: 100%;
+}
+.mui-table-view-cell{
+	padding: 0;
+	box-sizing: border-box;
+}
+.mui-table-view-cell:nth-of-type(1) a{
+	display: inline-block;
+	width: 14.8rem;
+	height: 1.85rem !important;
+	line-height: 2.1rem;
+	margin: 0.25rem 0.6rem;
+}
+
+.mui-table-view-cell:nth-of-type(2) a{
+	display: inline-block;
+	width: 14.8rem;
+	height: 0.6rem !important;
+	line-height: 0.6rem;
+	margin: 0.6rem 0.6rem;
+}
+.mui-table-view-cell:nth-of-type(3) a{
+	display: inline-block;
+	width: 14.8rem;
+	height: 0.6rem !important;
+	line-height: 0.6rem;
+	margin: 0.6rem 0.6rem;
+}
+
+.mui-navigate-right{
+	font-size: 0.55rem;
+}
+.mui-navigate-right input{
+	padding: 0;
+	margin:0;
+	margin-right: 0.75rem;
+	height: 0.55rem;
+	font-size: 0.55rem;
+	border: none;
+	text-align: right;
+	width: 5rem;
+}
+.text{
+	margin-right: 0.75rem;
+}
+.phone{
+	margin-top: 0.5rem;
+}
+.phone .mui-table-view-cell a{
+	display: inline-block;
+	width: 14.8rem;
+	height: 0.6rem !important;
+	line-height: 0.6rem;
+	margin: 0.6rem 0.6rem;
+}
+.phone_number{
+	margin-right: 0.2rem !important;
+}
+.phone .mui-navigate-right:after, .mui-push-right:after {
+    right: 0;
+    content: '';
+}
+.phone .mui-table-view:before {
+    height: 0px;
+}
+.phone .mui-table-view:after {
+    height: 0px;
+}
+.verify{
+	float: right;
+	width: 1.9rem;
+	height: 0.75rem;
+	font-style: normal;
+	border: 1px solid #af605b;
+	border-radius: 0.15rem;
+	text-align: center;
+	line-height: 0.75rem;
+	font-size: 0.45rem;
+	color: #ca3338;
+}
+.btn{
+	width: 14.8rem;
+	height: 1.85rem;
+	background: #e94840;
+	color: #fff;
+	margin: 1.2rem 0.6rem;
+}
+
+/* 选择头像 */
+.mui-backdrop {
+	/* display: none; */
+	background-color: rgba(0,0,0,.4);
+}
+.active{
+	display: block;
+} 
+.box{
+	width: 13.1rem;
+	height: 8rem;
+	background: #f5f5f5;
+	margin: 13.55rem 1.4rem 0 1.4rem;
+}
+.box>.but{
+	padding: 0;
+	width: 12.2rem;
+	height: 1.75rem;
+	line-height: 1.75rem;
+	border: none;
+	background: #fff;
+	color: #000000;
+	font-size: 0.6rem;
+	margin: 0 0.45rem;
+}
+.box>.but:nth-of-type(1){
+	margin-top: 1.6rem;
+}
+.box>.but:nth-of-type(1):active{
+	background: #293259 !important;
+}
+.box>.but:nth-of-type(2){
+	margin-top: 0.35rem;
+}
+.box>.but:nth-of-type(2):active{
+	background: #293259 !important;
+}
+.box>.but:nth-of-type(3){
+	background: #e94840;
+	color: #fff;
+	margin-top: 0.35rem;
+}
+.box>.but:nth-of-type(3):active{
+	background: red !important;
+}
+/* 选择性别 */
+.xu_sex{
+	width: 15.25rem;
+	height: 8rem;
+	margin: 22.5rem 0.4rem 0 0.4rem;
+}
+.xu_sex>button{
+	padding: 0;
+	width: 15.2rem;
+	height: 1.75rem;
+	line-height: 1.75rem;
+	border: none;
+	font-size: 0.6rem;
+	border-radius: 0;
+	color: #0b76fb;
+}
+.xu_sex>.but1:nth-of-type(1){
+	border-bottom:1px solid #dbdbdc;
+	border-radius: 0.15rem 0.15rem 0 0;
+}
+.xu_sex>.but1:nth-of-type(1):active{
+	color: #0b76fb;
+	background: #fff !important;
+}
+.xu_sex>.but1:nth-of-type(2){
+	border-radius:0 0 0.15rem 0.15rem;
+}
+.xu_sex>.but1:nth-of-type(2):active{
+	color: #0b76fb;
+	background: #fff !important;
+}
+.xu_sex>.but{
+	color: #0b76fb;
+	background: #fff;
+	margin-top: 0.4rem;
+	border-radius: 0.15rem;
+}
+.xu_sex>.but:active{
+	color: #0b76fb;
+	background: #fff !important;
+}

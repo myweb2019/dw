@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/*样式重置mui*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.mui-bar .mui-icon:active {
+	opacity: 1;
+}
+
+body {
+	background: #f5f5f5;
+}
+
+.mui-bar-nav {
+	background: #FFFFFF;
+	box-shadow: none;
+	border-bottom: 1px solid #eaeaea;
+	box-sizing: border-box;
+}
+
+.mui-bar-nav a {
+	color: #e14c46;
+}
+
+.mui-bar-nav span {
+	display: inline-block;
+	height: 100%;
+	line-height: 44px;
+	color: #e94840;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+/* 主体内容 */
+.mui-content {
+	background: #f5f5f5;
+}
+
+.mui-content .car_list{
+	margin-top: 0.35rem;
+}
+.mui-content .shop_name {
+	height: 2.1rem;
+	line-height: 2.1rem;
+	width: 100%;
+	background: #fff;
+	padding-right: 10px;
+}
+
+.mui-content .shop_name input {
+	vertical-align: top;
+	margin: 0.65rem 0.35rem 0 7px;
+}
+
+input[type='checkbox'] {
+	display: inline-block;
+	appearance: none;
+	-webkit-appearance: none;
+	height: 0.55rem;
+	width: 0.55rem;
+}
+
+/* 没选中 */
+input[type='checkbox']::before {
+	content: "";
+	display: inline-block;
+	height: 0.7rem;
+	width: 0.7rem;
+	background-image: url(../images/gouxuan.png);
+	background-size: auto 0.7rem;
+	background-position: -0.7rem 0;
+}
+/*选中后*/
+input[type='checkbox']:checked::before {
+	content: "";
+	display: inline-block;
+	background-size: auto 0.7rem;
+	background-position: 0 0;
+}
+
+.mui-content .shop_name p {
+	font-size: 0.5rem;
+	display: inline-block;
+	color: #4c4c4c;
+	position: relative;
+}
+.mui-content .shop_name p::after{
+	content: '\e583';
+	font-family: Muiicons;
+	font-size: 0.7rem;
+	line-height: 0.7rem;
+	vertical-align:top;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-decoration: none;
+	color: #4f4f4f;
+	-webkit-font-smoothing: antialiased;
+}
+.mui-content .shop_name p span{
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: url(../images/shop_car.png);
+	background-size: auto 0.5rem;
+}
+.mui-content .shop_name>span{
+	float: right;
+	font-size: 0.6rem;
+	color: #8f8f8f;
+}
+.mui-content .shop_content{
+	height: 4.5rem;
+	width: 100%;
+}
+.mui-content .shop_content>input{
+	width: 1.5rem;
+	text-align: center;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	vertical-align: top;
+	float: left;
+}
+.mui-content .shop_content>img{
+	width: 3.7rem;
+	height: 3.7rem;
+	margin: 0.45rem 0 0.4rem 0;
+}
+.mui-content .shop_content .content{
+	float: right;
+	width: 10.8rem;
+}
+.mui-content .shop_content .content>p{
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: 0.55rem;
+	padding-left: 8px;
+	color: #4c4c4c;
+}
+.mui-content .shop_content>.content>.num{
+	height: 1.8rem;
+	margin-top: 1rem;
+}
+.mui-content .shop_content>.content>.num>p{
+	float: left;
+	width: 7.1rem;
+	line-height: 1.8rem;
+	color: #4c4c4c;
+	padding-left: 8px;
+
+}
+.mui-content .shop_content>.content>.num>.add-subtract{
+	width: 3.7rem;
+	float: right;
+	height: 1.8rem;
+	
+}
+.mui-content .shop_content>.content>.num>.add-subtract>i{
+	display: inline-block;
+	height: 1.8rem;
+	line-height: 1.8rem;
+	vertical-align: top;
+	color: #e94840;
+	font-style: normal;
+}
+.mui-content .shop_content>.content>.num>.add-subtract>span{
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-top: 0.4rem;
+}
+.mui-content .shop_content>.content>.num>.add-subtract>.subtract{
+	background-image: url(../images/bg-jia.png);
+	background-size: auto 1.1rem;
+	background-position:-1.1rem 0;
+}
+.mui-content .shop_content>.content>.num>.add-subtract>.add{
+	background-image: url(../images/bg-jia.png);
+	background-size: auto 1.1rem;
+	background-position:0 0;
+}
+.all-price{
+	height: 2.1rem;
+	border-top: 1px solid #e5e5e5;
+	background: #fff;
+	line-height: 2.1rem;
+	font-size: 0.45rem;
+	padding-left: 7px;
+}
+.all-price span{
+	color:red;
+	font-size: 0.5rem;
+	font-weight: 600;
+}
+.all-price button{
+	padding: 0;
+	font-size: ;
+	color: #fff;
+	font-size: 0.6rem;
+	width: 2.9rem;
+	height: 1.1rem;
+	background: #e94941;
+	margin: 0.5rem 10px;
+	line-height: 1.1rem;
+	border: none;
+}
+.all-price button:active{
+	background:#e94941;
+}

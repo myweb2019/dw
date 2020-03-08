@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/pinganxincun.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont2.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+			<span class="iconfont icon-fenxiang2"></span>
+		</header>
+		<div class="mui-content">
+			<!-- 保洁 -->
+			<div class="imgs">
+				<img src="images/banner01_02.gif" >
+			</div>
+			<div class="baojie">
+				<ul class="baojie_list"></ul>
+			</div>
+			<!-- 养生之道 -->
+			<div class="regimen">
+				<div class="ys_imgs">
+					<img src="images/yangs_02.gif" >
+				</div>
+				<div class="ys">
+					<ul class="ys_list"></ul>
+				</div>
+			</div>
+			<!-- 家电清洗 -->
+			<div class="Home_appliance_cleaning">
+				<div class="jd_imgs">
+					<img src="images/jiadian_02.gif" >
+				</div>
+				<div class="jd">
+					<ul class="jd_list"></ul>
+				</div>
+			</div>
+			<!-- 上门维修 -->
+			<div class="maintain">
+				<div class="sm_imgs">
+					<img src="images/jiadian_04.gif" >
+				</div>
+				<div class="sm">
+					<ul class="sm_list"></ul>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<div class="footer_imgs">
+				<img src="images/dibu_02.gif" >
+			</div>
+		</div>
+		
+		
+		
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script type="text/javascript">
+			mui.plusReady(function(){
+				var cw = plus.webview.currentWebview(); //获取当前窗体
+				var titleName = cw.title;
+				document.querySelector('.mui-title').innerHTML = titleName;
+			})
+		</script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/pinganxincun.js"></script>
+	</body>
+
+</html>

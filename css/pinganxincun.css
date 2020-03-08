@@ -1,0 +1,434 @@
+@charset "utf-8";
+/* body{
+	background: #cf1e16;
+} */
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+.mui-bar{
+	background-color: #FFFFFF;
+}
+.mui-title{
+	color: #474747;
+	font-weight: 600;
+	font-family: "宋体";
+}
+.mui-bar>a{
+	margin-left: 1px;
+	font-size: 26px !important;
+	color:#dd1f17;
+	font-weight: 500 !important;
+}
+.mui-bar>span{
+	float: right;
+	height: 44px;
+	line-height: 44px;
+	font-size: 26px;
+	color:#dd1f17;
+	font-weight: 500;
+	margin-right: 6px;
+}
+/* 主体内容 */
+.mui-content{
+	background-color:#cf1e16;
+	float: left;
+}
+
+.mui-content>.imgs{
+	width: 16rem;
+	height: 10rem;
+}
+
+.mui-content>.imgs>img{
+	width: 100%;
+	height: 100%;
+}
+.mui-content>.phone_imgs{
+	width: 16rem;
+	height:5.6rem;
+}
+.mui-content>.phone_imgs>img{
+	width: 100%;
+	height: 100%;
+}
+.baojie{
+	float: left;
+}
+.baojie>ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.baojie>ul>li{
+	float: left;
+	width: 7.8rem;
+	height: 10rem;
+	margin: 0 0.1rem 0.2rem 0.1rem;
+	list-style: none;
+	background: #FFFFFF;
+}
+.baojie>ul>li>.lis_img{
+	float: left;
+	width:7.6rem;
+	height: 7.6rem;
+	position: relative;
+	margin: 0.1rem;
+}
+
+.baojie>ul>li>.lis_img>img{
+	float: left;
+	width:100%;
+	height: 100%;
+	
+}
+.baojie>ul>li>.lis_img>p{
+	margin: 0;
+	height: 1rem;
+	width: 7.6rem;
+	position: absolute;
+	bottom: 0;	
+	background: #000;
+	opacity: 0.6;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	vertical-align: top;
+	line-height: 1.05rem;
+	padding-left: 7px;
+}
+.baojie>ul>li>.title{
+	font-weight: bold;
+	float: left;
+	font-size: 0.55rem;
+	padding-left: 0.1rem;
+	height: 20px;
+	line-height: 1rem;
+	width: 100%;
+}
+.baojie>ul>li>.price{
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 1.2rem;
+	line-height: 24px;
+	font-size: 0.4rem;
+	padding-left: 0.1rem;
+}
+.baojie>ul>li>.price>strong{
+	color: #e82e24;
+	font-size: 0.75rem;
+}
+/* 养生 */
+.regimen{
+	float: left;
+}
+.ys_imgs{
+	float: left;
+	height: 3.4rem;
+	width: 16rem;
+}
+.ys_imgs>img{
+	width: 100%;
+	height: 100%;
+}
+
+.ys>ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.ys>ul>li{
+	float: left;
+	width: 7.8rem;
+	height: 10rem;
+	margin: 0 0.1rem 0.2rem 0.1rem;
+	list-style: none;
+	background: #FFFFFF;
+}
+.ys>ul>li>.lis_img{
+	float: left;
+	width:7.6rem;
+	height: 7.6rem;
+	position: relative;
+	margin: 0.1rem;
+}
+.ys>ul>li>.lis_img>p{
+	margin: 0;
+	height: 1rem;
+	width: 7.6rem;
+	position: absolute;
+	bottom: 0;	
+	background: #000;
+	opacity: 0.6;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	vertical-align: top;
+	line-height: 1.05rem;
+	padding-left: 7px;
+}
+.ys>ul>li>.lis_img>img{
+	float: left;
+	width:100%;
+	height: 100%;
+	/* margin: 0.1rem; */
+}
+.ys>ul>li>.title{
+	font-weight: bold;
+	padding-left: 0.1rem;
+	float: left;
+	font-size: 0.55rem;
+	box-sizing: border-box;
+	height: 20px;
+	line-height: 1rem;
+	width: 7.8rem;
+	margin-top: 0.1rem;
+}
+.ys>ul>li>.price{
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 1.2rem;
+	padding-left: 0.1rem;
+	line-height: 24px;
+	font-size: 0.4rem;
+}
+.ys>ul>li>.price>strong{
+	color: #e82e24;
+	font-size: 0.75rem;
+}
+
+/* 家电清洗 */
+.Home_appliance_cleaning{
+	float: left;
+}
+
+.jd_imgs{
+	float: left;
+	height: 3.4rem;
+	width: 16rem;
+}
+.jd_imgs>img{
+	width: 100%;
+	height: 100%;
+}
+
+.jd>ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.jd>ul>li{
+	float: left;
+	width: 7.8rem;
+	height: 10rem;
+	margin: 0 0.1rem 0.2rem 0.1rem;
+	list-style: none;
+	background: #FFFFFF;
+}
+.jd>ul>li>.lis_img{
+	float: left;
+	width:7.6rem;
+	height: 7.6rem;
+	position: relative;
+	margin: 0.1rem;
+}
+.jd>ul>li>.lis_img>p{
+	margin: 0;
+	height: 1rem;
+	width: 7.6rem;
+	position: absolute;
+	bottom: 0;	
+	background: #000;
+	opacity: 0.6;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	vertical-align: top;
+	line-height: 1.05rem;
+	padding-left: 7px;
+}
+.jd>ul>li>.lis_img>img{
+	float: left;
+	width:100%;
+	height: 100%;
+	/* margin: 0.1rem; */
+}
+.jd>ul>li>.title{
+	font-weight: bold;
+	padding-left: 0.1rem;
+	float: left;
+	font-size: 0.55rem;
+	box-sizing: border-box;
+	height: 20px;
+	line-height: 1rem;
+	width: 7.8rem;
+	margin-top: 0.1rem;
+}
+.jd>ul>li>.price{
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 1.2rem;
+	padding-left: 0.1rem;
+	line-height: 24px;
+	font-size: 0.4rem;
+}
+.jd>ul>li>.price>strong{
+	color: #e82e24;
+	font-size: 0.75rem;
+}
+/* 上门维修 */
+
+.sm_imgs{
+	float: left;
+	height: 3.4rem;
+	width: 16rem;
+}
+.sm_imgs>img{
+	width: 100%;
+	height: 100%;
+}
+
+.sm>ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.sm>ul>li{
+	float: left;
+	width: 7.8rem;
+	height: 10rem;
+	margin: 0 0.1rem 0.2rem 0.1rem;
+	list-style: none;
+	background: #FFFFFF;
+}
+.sm>ul>li>.lis_img{
+	float: left;
+	width:7.6rem;
+	height: 7.6rem;
+	position: relative;
+	margin: 0.1rem;
+}
+.sm>ul>li>.lis_img>p{
+	margin: 0;
+	height: 1rem;
+	width: 7.6rem;
+	position: absolute;
+	bottom: 0;	
+	background: #000;
+	opacity: 0.6;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	vertical-align: top;
+	line-height: 1.05rem;
+	padding-left: 7px;
+}
+.sm>ul>li>.lis_img>img{
+	float: left;
+	width:100%;
+	height: 100%;
+	/* margin: 0.1rem; */
+}
+.sm>ul>li>.title{
+	font-weight: bold;
+	padding-left: 0.1rem;
+	float: left;
+	font-size: 0.55rem;
+	box-sizing: border-box;
+	height: 20px;
+	line-height: 1rem;
+	width: 7.8rem;
+	margin-top: 0.1rem;
+}
+.sm>ul>li>.price{
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 1.2rem;
+	padding-left: 0.1rem;
+	line-height: 24px;
+	font-size: 0.4rem;
+}
+.sm>ul>li>.price>strong{
+	color: #e82e24;
+	font-size: 0.75rem;
+}
+
+/* 底部 */
+.footer_imgs{
+	height: 1.75rem;
+	width: 16rem;
+}
+.footer_imgs>img{
+	height: 100%;
+	width: 100%;
+}
+
+/* 手机维修 */
+
+.phonewx{
+	float: left;
+}
+.phonewx>ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.phonewx>ul>li{
+	float: left;
+	width: 7.8rem;
+	height: 10rem;
+	margin: 0 0.1rem 0.2rem 0.1rem;
+	list-style: none;
+	background: #FFFFFF;
+}
+.phonewx>ul>li>.lis_img{
+	float: left;
+	width:7.6rem;
+	height: 7.6rem;
+	position: relative;
+	margin: 0.1rem;
+}
+
+.phonewx>ul>li>.lis_img>img{
+	float: left;
+	width:100%;
+	height: 100%;
+	
+}
+.phonewx>ul>li>.lis_img>p{
+	margin: 0;
+	height: 1rem;
+	width: 7.6rem;
+	position: absolute;
+	bottom: 0;	
+	background: #000;
+	opacity: 0.6;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	vertical-align: top;
+	line-height: 1.05rem;
+	padding-left: 7px;
+}
+.phonewx>ul>li>.title{
+	font-weight: bold;
+	float: left;
+	font-size: 0.55rem;
+	padding-left: 0.1rem;
+	height: 20px;
+	line-height: 1rem;
+	width: 100%;
+}
+.phonewx>ul>li>.price{
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 1.2rem;
+	line-height: 24px;
+	font-size: 0.4rem;
+	padding-left: 0.1rem;
+}
+.phonewx>ul>li>.price>strong{
+	color: #e82e24;
+	font-size: 0.75rem;
+}

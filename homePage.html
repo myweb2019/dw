@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/homePage.css" />
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	</head>
+
+	<body>
+		<!-- 头部 -->
+		<header class="mui-bar mui-bar-nav">
+			<div>
+				<div class="location mui-pull-left">
+					<span id="ico">
+						<img src="./images/position3.png">
+					</span>
+					<div id="city">获取地理位置</div>
+					<img src="./images/down4.png" width="9" height="auto">
+				</div>
+				<div class="search">
+					<span class="mui-icon mui-icon-search" style="color: #9e9e9e;">
+						<i class="search_con" style="color: #9e9e9e">快速搜索商家、服务</i>
+					</span>
+				</div>
+				<span class="mui-icon mui-icon-chat" style="margin-top: 11px;"></span>
+			</div>
+		</header>
+		
+		<div class="mui-content">
+			<!-- 轮播图 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper" id="swiper-container"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="main_nav">
+				<div class="mui-pull-left">
+					<span></span>
+					<p>未服务全额退</p>
+				</div>
+				<div class="mui-pull-left">
+					<span></span>
+					<p>爽约包赔</p>
+				</div> 
+				<div class="mui-pull-left">
+					<span></span>
+					<p>不满意重服务</p>
+				</div>
+				<div class="mui-pull-left">
+					<span></span>
+					<p>全场保障</p>
+				</div>
+			</div>
+			<!-- 分类-->
+			<div id="Gallery" class="mui-slider">
+				<div class="mui-slider-group"></div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 即刻到达 -->
+		<div class="goto">
+			<div>
+				即刻达
+				<span class="mui-pull-right">最快30分钟上门</span>
+			</div>
+			<ul id="goto"></ul>
+		</div>
+		<!-- 推荐 -->
+		<div class="recommend"></div>
+		<!-- 内容 -->
+		<div class="filterItems"></div>			
+		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/mui.js"></script>
+		<script type="text/javascript" src="js/homePage.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">mui.init()</script>
+	</body>
+</html>

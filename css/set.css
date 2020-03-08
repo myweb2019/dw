@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* 头部 */
+.mui-bar-nav{
+	background: #FFFFFF;
+	box-shadow: none;
+	border-bottom:1px solid #d1d1d1;
+	box-sizing: border-box;
+}
+.mui-bar-nav a{
+	color: #e14c46;
+}
+.mui-title{
+	font-size: 0.65rem;
+}
+input[type='button']:enabled:active, input[type='button'].mui-active:enabled, input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled, input[type='reset']:enabled:active, input[type='reset'].mui-active:enabled, button:enabled:active, button.mui-active:enabled, .mui-btn:enabled:active, .mui-btn.mui-active:enabled {
+    color: #333;
+    background-color: #fff;
+}
+
+/* 列表 */
+.mui-table-view-cell{
+	height: 1.8rem;
+	width: 16rem;
+	padding: 0;
+}
+
+.mui-table-view-cell a{
+	font-size: 0.55rem;
+	margin: 0.6rem 0 !important;
+	padding-left: 0.6rem !important;
+	box-sizing: border-box;
+	height: 0.6rem;
+	line-height: 0.6rem;
+}
+.mui-table-view-cell > a:not(.mui-btn).mui-active
+{
+    background-color: transparent;
+}
+.mui-table-view-cell:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #E5E5E5;
+}
+.else_per_operation{
+	margin-top: 0.4rem;
+}
+button{
+	margin-top: 1.2rem;
+	height: 1.8rem;
+	width: 16rem;
+	border: none;
+}

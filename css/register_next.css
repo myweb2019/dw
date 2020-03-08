@@ -1,0 +1,106 @@
+@charset "utf-8";
+body{
+	background: #fff;
+}
+.mui-bar-nav{
+	background: #FFFFFF;
+	box-shadow: none;
+	border-bottom:1px solid #eaeaea;
+	box-sizing: border-box;
+}
+.mui-bar-nav a{
+	color: #e14c46;
+}
+.mui-content{
+	background: #fff;
+}
+.mui-input-row{
+	height: 1.9rem;
+	position: relative;
+	background: #e5e5e5 !important;
+}
+.mui-input-row input{
+	background: #e5e5e5;
+	height: 1.9rem;
+	width: 11.8rem;
+	border: none;
+	margin: 0;
+}
+.mui-content h5{
+	height:2.8rem;
+	margin: 0;
+	line-height: 3.8rem;
+	padding-left: 0.65rem;
+	box-sizing: border-box;
+	font-size: 0.6rem;
+	color: #494949;
+}
+.mui-input-row input::placeholder,input::-webkit-input-placeholder{
+	font-size: 0.6rem;
+	color: #d1d1d1;
+}
+.mui-input-row span{
+	color: #c8c8c8 !important;
+}
+.mui-input-row .mui-input-clear ~ .mui-icon-clear, .mui-input-row .mui-input-speech ~ .mui-icon-speech, .mui-input-row .mui-input-password ~ .mui-icon-eye {
+    font-size: 0.9rem;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 3.25rem;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    color: #999;
+}
+.mui-input-row .btn{
+	position: absolute;
+	right: 0.1rem;
+	top: 0.3rem;
+	width: 2.9rem;
+	height: 1.25rem;
+	background:#e94840;
+	color: #fff;
+	font-size: 0.5rem;
+}
+/* 协议 */
+.agreement{
+	padding-left: 0.6rem;
+	height: 2.5rem;
+	line-height:2.5rem;
+	width: 100%;
+	font-size: 0.5rem;
+	color: #d3d5df;
+}
+.agreement a{
+	color: #e94840;
+	text-decoration: underline;
+}
+.agreement input{
+	vertical-align: top;
+	margin-top: 0.8rem;
+}
+.agreement input[type='checkbox']{
+	display: inline-block;
+	appearance: none;
+	-webkit-appearance: none;
+	height: 0.8rem;
+	width: 0.8rem;
+}
+.agreement input[type='checkbox']::before{
+	content: '';
+	display: inline-block;
+	height: 0.8rem;
+	width: 0.8rem;
+	background-image: url(../images/check.png);
+	background-size: auto 0.8rem;
+}
+.agreement input[type='checkbox']:checked::before{
+	content: "";
+	display: inline-block;
+	height: 0.8rem;
+	width: 0.8rem;
+	background-image: url(../images/check.png);
+	background-size: auto 0.8rem;
+	background-position: -0.8rem 0;
+}

@@ -1,0 +1,223 @@
+@charset "utf-8";
+body{
+	background: #FFFFFF;
+}
+.mui-bar-nav{
+	background: #FFFFFF;
+	box-shadow: none;
+}
+.mui-bar-nav a{
+	color: #e14c46;
+}
+.title{
+	background: #fff;
+	height: 3.75rem;
+	width: 100%;
+}
+.title img{
+	vertical-align: middle;
+	width: 3.6rem;
+	height: 1.8rem;
+	object-fit: cover;
+	margin: 1rem 6.2rem;
+}
+/* 输入框 */
+.mui-content{
+	background: #fff;
+}
+.mui-input-group{
+	padding: 0.9rem 1.35rem 0 1.35rem;
+}
+.mui-input-group:before {
+    background-color: #fff;
+}
+.mui-input-group:after {
+   background-color: #fff;
+}
+.mui-input-clear::-webkit-input-placeholder {
+      font-size: 0.55rem;
+      color: #d1d1d1;
+}
+.mui-input-row{
+	margin-top: 0.5rem;
+}
+#pass span:nth-of-type(2){
+	margin-right: 20px;
+}
+.mui-input-group input, .mui-input-group textarea {
+	padding: 0
+ 
+}
+.mui-input-group .mui-input-row:after {
+    left: 0px;
+}
+.mui-input-group>.btn{
+	height: 1.9rem;
+	width: 100%;
+	background:#e94840;
+	color: #fff;
+	border-radius: 0.8rem;
+	margin-top: 1.5rem;
+}
+.mui-input-group .mui-input-row {
+    height: 1.75rem;
+}
+.mui-input-row>input{
+	font-size: 0.6rem;
+	height: 1.75rem;
+	line-height: 1.75rem;
+}
+.mui-input-row .mui-input-password ~ .mui-icon-eye {
+    font-size: 0.6rem;
+    position: absolute;
+    z-index: 1;
+    top: 0.65rem;
+    right: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    text-align: center;
+    color: #999;
+}
+.mui-input-row .mui-input-clear ~ .mui-icon-clear, .mui-input-row .mui-input-speech ~ .mui-icon-speech, .mui-input-row .mui-input-password ~ .mui-icon-eye {
+    font-size: 0.6rem;
+    position: absolute;
+    z-index: 1;
+    top: 0.65rem;
+    right: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    text-align: center;
+    color: #999;
+}
+/* 其他登录方式 */
+.mui-input-group .link{
+	height: 2.35rem;
+	width: 100%;
+	line-height: 2.35rem;
+}
+.mui-input-group .link a{
+	color: #4c4c4c;
+	font-size: 0.5rem;
+}
+.mui-input-group .link a:nth-of-type(1){
+	padding-right: 0.65rem;
+	border-right: 1px solid #4d4d4d;
+}
+.mui-input-group .link a:nth-of-type(2){
+	margin-left: 0.3rem;
+}
+.quick_login{
+	width: 14.8rem;
+	height: 5.9rem;
+	margin-top: 7.9rem;
+	margin: 7.9rem 0.6rem 0 0.6rem;
+}
+.quick_login h4{
+	height: 1.6rem;
+	line-height: 1.6rem;
+	font-size: 0.6rem;
+	font-style: normal;
+	font-weight: 500;
+	color: #4c4c4c;
+	position: relative;
+}
+.quick_login h4::before{
+	 content: '';
+	 width: 5.7rem;
+	 height:1px;
+	 background: #e5e5e5;
+	 position: absolute; 
+	 left: 0;
+	 top: 0.75rem;
+}
+.quick_login h4::after{
+	content: '';
+	width: 5.7rem;
+	height:1px;
+	background: #e5e5e5;
+	position: absolute; 
+	right: 0;
+	top: 0.75rem;
+}
+.quick_login_img{
+	width: 13.65rem;
+	height: 4.3rem;
+	margin: 0 0.6rem 0 0.55rem;
+}
+.quick_login_img ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.quick_login_img ul li{
+	width: 4.55rem;
+	height: 4.3rem;
+	float: left;
+	list-style: none;
+	text-align: center;
+}
+.quick_login_img ul li span{
+	display: inline-block;
+	height: 2.05rem;
+	width: 2.05rem;
+	margin-top: 0.5rem;
+	background-image: url('../images/weibo.png');
+	background-size:auto 2.05rem; 
+}
+.quick_login_img ul li .weibo{
+	 background-position: 0 0;
+}
+.quick_login_img ul li .qq{
+	 background-position: -2.1rem 0;
+}
+.quick_login_img ul li .wechat{
+	 background-position: -4.2rem 0;
+}
+.quick_login_img ul li p{
+	color: #8f8f8f;
+	font-size:0.45rem;
+	margin: 0;
+}
+
+/* 协议 */
+.agreement{
+	float: left;
+	height: 1.25rem;
+	line-height:1.25rem;
+	width: 100%;
+	text-align: center;
+	font-size: 0.45rem;
+}
+.agreement a{
+	color: #e94840;
+}
+.agreement input{
+	vertical-align: top;
+	margin-top: 0.25rem;
+	margin-right: 0.25rem;
+}
+
+input[type='checkbox']{
+	display: inline-block;
+	appearance: none;
+	-webkit-appearance: none;
+	height: 0.55rem;
+	width: 0.55rem;
+}
+/* 未选中 */
+input[type="checkbox"]::before {
+	 content: "";
+	 display: inline-block;
+	 height: 0.55rem;
+	 width: 0.55rem;
+	 background-image: url(../images/check.png);
+	 background-size: auto 0.55rem;
+}
+/* 选中 */
+ input[type="checkbox"]:checked::before {
+	content: "";
+	display: inline-block;
+	background-size: auto 0.55rem;
+	background-position: -0.55rem 0;
+	
+}

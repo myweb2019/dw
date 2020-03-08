@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+		</header>
+		<div class="mui-content">
+			<div class="title">
+				<img src="images/daowei.png" alt="">
+			</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="请输入账户">
+				</div>
+				<div class="mui-input-row" id="pass">
+					<input type="password" class="mui-input-password mui-input-clear" placeholder="请输入密码">
+				</div>
+				<button type="button" class="mui-btn btn">立即登录</button>
+				<div class="link mui-text-center">
+					<a href="javascript:;" id="register">新用户快速注册</a>
+					<a href="javascript:;">手机号快捷登录</a>
+				</div>
+			</form>
+			<!-- 快捷登录 -->
+			<div class="quick_login">
+				<h4 class="mui-text-center">快捷登录</h4>
+				<div class="quick_login_img">
+					<ul>
+						<li>
+							<span class="weibo"></span>
+							<p>微博</p>
+						</li>
+						<li>
+							<span class="qq"></span>
+							<p>QQ</p>
+						</li>
+						<li>
+							<span class="wechat"></span>
+							<p>微信</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 协议 -->
+			<div class="agreement">
+				<input type="checkbox" id="checkbox"/>已阅读并同意<a href="">《到位用户协议》</a>与<a href="">《隐私协议》</a>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/api.js"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
