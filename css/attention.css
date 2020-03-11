@@ -74,6 +74,7 @@ body {
 }
 /* 服务 */
 .services{
+	width: 100%;
 	display: none;
 	float: left;
 }
@@ -141,6 +142,7 @@ body {
 }
 /* 技师 */
 .technician{
+	width: 100%;
 	display: none;
 	float: left;
 }
@@ -149,6 +151,7 @@ body {
 }
 /* 店铺 */
 .store{
+	width: 100%;
 	display: none;
 	float: left;
 }
@@ -157,4 +160,43 @@ body {
 }
 .mui-content .active{
 	display: block;
+}
+
+/* 消息框 */
+.mui-popover{
+	top:50%;
+	height: 5.15rem;
+	width: 12.05rem;
+	margin: 0 2rem;
+	background: #fff;
+}
+.mui-popover p{
+	height: 3rem;
+	width: 100%;
+	line-height: 3rem;
+	text-align: center;
+	font-size: 0.7rem;
+	color: #000000;
+	border-bottom: 1px solid #e5e5e5;
+}
+.mui-popover p .btn{
+	height: 2rem;
+	width: 100%;
+}
+.mui-popover .btn>button{
+	height: 2.1rem;
+	width: 5.9rem;
+	border: none;
+	font-size: 0.65rem;
+	color: #2d84f0;
+	border-radius: 0 0 0 7px;
+}
+.mui-popover .btn>button:nth-of-type(1){
+	border-right: 1px solid #e5e5e5;
+}
+.mui-popover .btn>button:nth-of-type(2){
+	border-radius: 0 0 7px 0;
+}
+.mui-popover .btn>button:active{
+	background: #fff;
 }

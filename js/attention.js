@@ -8,8 +8,14 @@ mui('.nav').on('tap', 'a', function() {
 	let _id = this.getAttribute('href');
 	document.querySelector(_id).classList.add('active')
 })
+
+
 document.getElementById("services-cancel").addEventListener('tap', function() {
-	mui.confirm('确认要取消关注',function(e) {
-		console.log(e)
-	})
-});
+	mui("#popover").popover('toggle', document.getElementById("div"));
+	
+})
+
+//点击取消
+document.getElementsByClassName('cancel')[0].addEventListener('tap',function(){
+	
+})

@@ -5,7 +5,17 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/attention.css"/>
+		<link rel="stylesheet" type="text/css" href="css/attention.css" />
+		<style type="text/css">
+			#div {
+				width: 0px;
+				height: 0px;
+				background: red;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -39,7 +49,7 @@
 			<!-- 技师 -->
 			<div class="technician" id="technician">
 				<!-- 没有商品关注 -->
-				<div class="no-attention" >
+				<div class="no-attention">
 					<img src="./images/jis_03.gif" alt="">
 					<p>暂无关注技师</p>
 				</div>
@@ -73,8 +83,20 @@
 				</div>
 			</div>
 		</div>
+		<div id="popover" class="mui-popover">
+			<p>确认要取消关注吗？</p>
+			<div class="btn">
+				<button type="button" class="cancel">取消</button>
+				<button type="button">确定</button>
+			</div>
+		</div>
 	</body>
 	<script src="js/mui.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init()
+	</script>
 	<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/attention.js" type="text/javascript" charset="utf-8"></script>
 </html>

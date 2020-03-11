@@ -141,7 +141,7 @@ input[type='button']:enabled:active, input[type='button'].mui-active:enabled, in
 	width: 13.1rem;
 	height: 8rem;
 	background: #f5f5f5;
-	margin: 13.55rem 1.4rem 0 1.4rem;
+	margin: 14.35rem 1.4rem 0 1.4rem;
 }
 .box>.but{
 	padding: 0;
@@ -177,8 +177,10 @@ input[type='button']:enabled:active, input[type='button'].mui-active:enabled, in
 /* 选择性别 */
 .xu_sex{
 	width: 15.25rem;
-	height: 8rem;
-	margin: 22.5rem 0.4rem 0 0.4rem;
+	height: 5.75rem;
+	position: absolute;
+	bottom: 0;
+	margin:0 0.4rem 0.4rem 0.4rem;
 }
 .xu_sex>button{
 	padding: 0;
