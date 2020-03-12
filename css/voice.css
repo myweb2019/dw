@@ -1,0 +1,171 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.mui-bar .mui-icon:active {
+	opacity: 1;
+}
+
+body {
+	background: #f5f5f5;
+}
+
+.mui-bar-nav {
+	background: #FFFFFF;
+	box-shadow: none;
+	border-bottom: 1px solid #eaeaea;
+	box-sizing: border-box;
+}
+
+.mui-bar-nav a {
+	color: #e14c46;
+}
+
+.mui-title {
+	font-size: 14px;
+}
+
+/* 主体内容 */
+.mui-content {
+	background: #F5F5F5;
+}
+
+.text {
+	margin-top: 5.3rem;
+	width: 100%;
+}
+
+.text p {
+	height: 1.35rem;
+	text-align: center;
+	font-size: 0.85rem;
+	line-height: 1.35rem;
+}
+
+/*语音按钮 */
+.voice-button {
+	position: absolute;
+	height: 6.1rem;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+.voice-button img {
+	width: 3.45rem;
+	height: 3.45rem;
+}
+
+.voice-button p {
+	float: left;
+	width: 100%;
+	height: 1.75rem;
+	line-height: 1.75rem;
+	text-align: center;
+	margin-top: 0.95rem;
+	font-size: 0.6rem;
+}
+
+/* 波纹 */
+@keyframes yuying1 {
+	0% {
+		height: 0%;
+	}
+
+	20% {
+		height: 50%;
+	}
+
+	50% {
+		height: 100%;
+	}
+
+	80% {
+		height: 50%;
+	}
+
+	100% {
+		height: 0%;
+	}
+}
+
+#container {
+	margin-top:7.5rem;
+	width: 16rem;
+	height: 30px;
+	text-align: center;
+}
+
+#container #one {
+	animation: yuying1 0.6s infinite 0.1s;
+	-webkit-animation: yuying1 0.6s infinite 0.1s;
+}
+
+#container #two {
+	animation: yuying1 0.6s infinite 0.2s;
+	-webkit-animation: yuying1 0.6s infinite 0.2s;
+}
+
+#container #three {
+	animation: yuying1 0.6s infinite 0.3s;
+	-webkit-animation: yuying1 0.6s infinite 0.3s;
+}
+
+#container #four {
+	animation: yuying1 0.6s infinite 0.4s;
+	-webkit-animation: yuying1 0.6s infinite 0.4s;
+}
+
+#container #five {
+	animation: yuying1 0.6s infinite 0.5s;
+	-webkit-animation: yuying1 0.6s infinite 0.5s;
+}
+
+#container #sex {
+	animation: yuying1 0.6s infinite 0.6s;
+	-webkit-animation: yuying1 0.6s infinite 0.6s;
+}
+
+#container #seven {
+	animation: yuying1 0.6s infinite 0.7s;
+	-webkit-animation: yuying1 0.6s infinite 0.7s;
+}
+#container #eight {
+	animation: yuying1 0.6s infinite 0.8s;
+	-webkit-animation: yuying1 0.6s infinite 0.8s;
+}
+#container #nine {
+	animation: yuying1 0.6s infinite 0.9s;
+	-webkit-animation: yuying1 0.6s infinite 0.8s;
+}
+#container #ten {
+	animation: yuying1 0.6s infinite s;
+	-webkit-animation: yuying1 0.6s infinite 1s;
+}
+#one,
+#two,
+#three,
+#four,
+#five,
+#sex,
+#seven,
+#eight,
+#nine,
+#ten{
+	list-style: none;
+	width: 1px;
+	height: 100%;
+	margin-left: 10px;
+	border-radius: 50px;
+	background-color: red;
+	vertical-align: middle;
+	display: inline-block;
+}
