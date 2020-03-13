@@ -217,3 +217,7 @@ input[type='button']:enabled:active, input[type='button'].mui-active:enabled, in
 	color: #0b76fb;
 	background: #fff !important;
 }
+.mui-backdrop{
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .6);
+}

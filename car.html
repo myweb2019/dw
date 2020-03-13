@@ -11,7 +11,7 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
 			<h1 class="mui-title">购物车</h1>
-			<span class="mui-pull-right">清空</span>
+			<span class="mui-pull-right" id="empty">清空</span>
 		</header>
 		<div class="mui-content">
 			<div class="car_list">
@@ -21,7 +21,7 @@
 						<span></span>
 						巧匠到家
 					</p>
-					<span>删除</span>
+					<span class="shopping-empty">删除</span>
 				</div>
 				<div class="shop_content">
 					<input type="checkbox">
@@ -50,7 +50,7 @@
 						<span></span>
 						巧匠到家
 					</p>
-					<span>删除</span>
+					<span class="shopping-empty">删除</span>
 				</div>
 				<div class="shop_content">
 					<input type="checkbox">
@@ -73,8 +73,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="mask_layer">
+			<div class="select">
+				<h4>确定要移除所有项目吗？</h4>
+				<p>你也可以将这些项目移入到"我的-关注服务内",以便再次选择订购</p>
+				<button type="button">移入关注</button>
+				<button type="button">确认删除</button>
+				<button type="button" class="qx">取消</button>
+			</div>
+		</div>
 	</body>
 	<script src="js/mui.js"></script>
 	<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/car.js" type="text/javascript" charset="utf-8"></script>
 </html>

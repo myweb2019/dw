@@ -1,4 +1,15 @@
 @charset "utf-8";
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+button{
+	margin: 0;
+	padding: 0;
+}
 
 /* 头部 */
 .mui-bar-nav{
@@ -56,4 +67,56 @@ button{
 	height: 1.8rem;
 	width: 16rem;
 	border: none;
+}
+/* 消息框 */
+#popover{
+	top:48%;
+	height: 5.15rem;
+	width: 12.05rem;
+	margin: 0 2rem;
+	background: #fff;
+	border-radius: 7px;
+	z-index: 10;
+	position: absolute;
+
+}
+#popover p{
+	height: 3rem;
+	width: 100%;
+	line-height: 3rem;
+	text-align: center;
+	font-size: 0.7rem;
+	color: #000000;
+	border-bottom: 1px solid #e5e5e5;
+}
+#popover p .btn{
+	height: 2rem;
+	width: 100%;
+}
+#popover .btn>button{
+	margin: 0;
+	height: 2.2rem;
+	width: 6rem;
+	border: none;
+	font-size: 0.65rem;
+	color: #2d84f0;
+	border-radius: 0 0 0 7px;
+}
+#popover .btn>button:nth-of-type(1){
+	border-right: 1px solid #e5e5e5;
+}
+#popover .btn>button:nth-of-type(2){
+	border-radius: 0 0 7px 0;
+	
+}
+#popover .btn>button:active{
+	background: #d9d9d9;
+}
+.mui-backdrop{
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .6);
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
 }

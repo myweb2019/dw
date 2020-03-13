@@ -163,14 +163,18 @@ body {
 }
 
 /* 消息框 */
-.mui-popover{
+#popover{
 	top:50%;
 	height: 5.15rem;
 	width: 12.05rem;
 	margin: 0 2rem;
 	background: #fff;
+	border-radius: 7px;
+	z-index: 10;
+	position: absolute;
+
 }
-.mui-popover p{
+#popover p{
 	height: 3rem;
 	width: 100%;
 	line-height: 3rem;
@@ -179,11 +183,11 @@ body {
 	color: #000000;
 	border-bottom: 1px solid #e5e5e5;
 }
-.mui-popover p .btn{
+#popover p .btn{
 	height: 2rem;
 	width: 100%;
 }
-.mui-popover .btn>button{
+#popover .btn>button{
 	height: 2.1rem;
 	width: 5.9rem;
 	border: none;
@@ -191,12 +195,20 @@ body {
 	color: #2d84f0;
 	border-radius: 0 0 0 7px;
 }
-.mui-popover .btn>button:nth-of-type(1){
+#popover .btn>button:nth-of-type(1){
 	border-right: 1px solid #e5e5e5;
 }
-.mui-popover .btn>button:nth-of-type(2){
+#popover .btn>button:nth-of-type(2){
 	border-radius: 0 0 7px 0;
 }
-.mui-popover .btn>button:active{
+#popover .btn>button:active{
 	background: #fff;
+}
+.mui-backdrop{
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .6);
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
 }
