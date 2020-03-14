@@ -1,4 +1,7 @@
 @charset "utf-8";
+.mui-bar .mui-icon:active {
+    opacity: 1;
+}
 .mui-row.mui-fullscreen>[class*="mui-col-"] {
 	height: 100%;
 }
@@ -147,6 +150,9 @@ input{
 	float: left;
 	list-style: none;
 }
+.mui-table-view-cell.mui-active {
+    background-color:transparent;
+}
 .mui-table-view-cell ul>li>.name{
 	height: 19px;
 	line-height: 19px;
@@ -161,6 +167,5 @@ input{
 .mui-control-content:nth-of-type(1) {
     position: relative;
     overflow: hidden;
-	margin-top: 17px;
     -webkit-touch-callout: none;
 }

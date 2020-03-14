@@ -4,6 +4,17 @@ mui.plusReady(function() {
 		'scrollIndicator': 'none'
 	}); //取消滚动条
 });
+
+//选择位置
+document.getElementById('city').addEventListener('tap', function() {
+	mui.openWindow({
+		url: 'select_address.html',
+		id: 'select_address.html',
+		waiting: {
+			autoShow: false, //自动显示等待框，默认为true		
+		}
+	})
+})
 //轮播图
 $.ajax({
 	type: 'GET',
@@ -94,8 +105,6 @@ $.ajax({
 
 	}
 })
-
-
 
 //即刻到达
 $.ajax({
@@ -194,87 +203,117 @@ mui(".shopping").on('tap', 'h2', function() {
 	shopping_show(id, title)
 })
 
-//家庭保洁
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/Household_cleaning",
-	success: function(data) {
-		ulModel(data, 0);
-	}
-})
 
-//上门按摩
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/massage",
-	success: function(data) {
-		ulModel(data, 1)
-	}
-})
-//上门维修
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/repair",
-	success: function(data) {
-		ulModel(data, 2)
-	}
-})
-//家电清洗
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/cleanout",
-	success: function(data) {
-		ulModel(data, 3)
-	}
-})
-//搬家拉货
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/move",
-	success: function(data) {
-		ulModel(data, 4)
-	}
-})
-//衣物洗护
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/xh",
-	success: function(data) {
-		ulModel(data, 5)
-	}
-})
-//美容美妆
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/beauty_makeup",
-	success: function(data) {
-		ulModel(data, 6)
-	}
-})
-//上门安装
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/home_installation",
-	success: function(data) {
-		ulModel(data, 7)
-	}
-})
-//车主服务
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/czfw",
-	success: function(data) {
-		ulModel(data, 8)
-	}
-})
-//保姆月嫂
-$.ajax({
-	type: 'GET',
-	url: "http://120.55.103.137/baby-sitter",
-	success: function(data) {
-		ulModel(data, 9)
-	}
-})
+async function shopping(){
+	return[
+		//家庭保洁
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/Household_cleaning",
+			success: function(data) {
+				ulModel(data, 0);
+			}
+		}),
+		
+		//上门按摩
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/massage",
+			success: function(data) {
+				ulModel(data, 1)
+			}
+		}),
+		//上门维修
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/repair",
+			success: function(data) {
+				ulModel(data, 2)
+			}
+		}),
+		//家电清洗
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/cleanout",
+			success: function(data) {
+				ulModel(data, 3)
+			}
+		}),
+		//搬家拉货
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/move",
+			success: function(data) {
+				ulModel(data, 4)
+			}
+		}),
+		//衣物洗护
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/xh",
+			success: function(data) {
+				ulModel(data, 5)
+			}
+		}),
+		//美容美妆
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/beauty_makeup",
+			success: function(data) {
+				ulModel(data, 6)
+			}
+		}),
+		//上门安装
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/home_installation",
+			success: function(data) {
+				ulModel(data, 7)
+			}
+		}),
+		//车主服务
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/czfw",
+			success: function(data) {
+				ulModel(data, 8)
+			}
+		}),
+		//保姆月嫂
+		$.ajax({
+			type: 'GET',
+			url: "http://120.55.103.137/baby-sitter",
+			success: function(data) {
+				ulModel(data, 9);
+				
+			}
+		})
+	]
+		
+}
+//获取detailItem跳转到商品详情页面
+link();
+
+async function link(){
+	await shopping();
+	mui('.filterItems').on('tap','.detailItem',function() {
+		let search =this.getAttribute('search');
+		//将属性值传给下一页面
+		mui.openWindow({
+			url: 'details.html',
+			id: 'details.html',
+			extras: { //对界面传值
+				_search: search
+			},
+			
+			waiting: {
+				autoShow: false, //自动显示等待框，默认为true
+			}
+		})
+	})
+}
+
+
 /**
  * 生成首页中各个分类的模板函数
  * @param {Object} data //数据
@@ -294,8 +333,9 @@ function ulModel(data, num) {
 
 	}
 	str += '</ul>'
-	$('.shopping').eq(num).append(str)
+	$('.shopping').eq(num).append(str);
 };
+
 
 
 /**

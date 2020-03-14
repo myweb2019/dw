@@ -99,16 +99,6 @@ mui.plusReady(function() {
 
 })
 
-
-
-
-
-
-
-
-
-
-
 /**
  * 给src渲染真正的地址
  * @param {Object} data
@@ -122,6 +112,21 @@ function Img(data) {
 		placeholder: 'images/60x60.gif',
 	});
 }
+
+//跳转到详情页面
+mui('#list').on('tap','li',function(){
+	var search = this.getAttribute('search');
+	mui.openWindow({
+		url: 'details.html',
+		id: 'details.html',
+		extras: { //对界面传值
+			_search: search
+		},
+		waiting: {
+			autoShow: false, //自动显示等待框，默认为true
+		}
+	})
+})
 
 
 /**
@@ -159,6 +164,7 @@ var createFragment = function(data) {
 			'	</div>' +
 			'</a>';
 		fragment.appendChild(li);
+		li.setAttribute("search",data.json[i].search)
 	}
 	return fragment;
 };

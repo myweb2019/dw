@@ -215,10 +215,10 @@ $.ajax({
 					}
 				});
 				
-				//鲜花
+				// //装修
 				$.ajax({
 					type: 'GET',
-					url: 'http://120.55.103.137/flower_classify',
+					url: 'http://120.55.103.137/finish_classify',
 					async: false,
 					success:async function(data) {
 						var str = "";
@@ -231,10 +231,10 @@ $.ajax({
 					}
 				});
 				
-				//车主服务
+				//鲜花
 				$.ajax({
 					type: 'GET',
-					url: 'http://120.55.103.137/finish_classify',
+					url: 'http://120.55.103.137/flower_classify',
 					async: false,
 					success:async function(data) {
 						var str = "";
@@ -295,10 +295,14 @@ $.ajax({
 						
 					}
 					//右侧
+					
 					for (var i = 1; i < length; i++) {
 						var offsetTop = contentListElem[i].offsetTop;
-						if (offsetTop + 500 >= maxScroll) {
-							var height = Math.max(offsetTop + 100 - maxScroll, 100);
+						var Wi = contentListElem[i].offsetHeight
+						console.log(offsetTop,Wi);
+						if (offsetTop+50>= maxScroll) {
+							console.log(1)
+							var height = Math.max(offsetTop + 50 - maxScroll, 50);
 							var totalHeight = 0;
 							var heights = [];
 							for (var j = i; j < length; j++) {
@@ -331,7 +335,7 @@ $.ajax({
 								onScroll(i);
 								break;
 							} else if (scrollTop >= maxScroll) {
-								onScroll(length - 1);
+								onScroll(length-2);
 								break;
 							}
 						}

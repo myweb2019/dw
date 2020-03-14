@@ -5,6 +5,9 @@ mui.plusReady(function() {
 	}); //取消滚动条
 });
 
+// async function AllLi() {
+	
+// }
 $.ajax({
 	url: 'http://120.55.103.137/Household_cleaning',
 	type: 'GET',
@@ -24,6 +27,7 @@ $.ajax({
 				'</li>'
 			}
 			$('.baojie_list').html(str);
+			
 	}
 })
 
@@ -117,4 +121,20 @@ $.ajax({
 			}
 			$('.phonewx_list').html(str);
 	}
+})
+
+
+mui('.mui-content').on('tap','li',function(){
+	let search =this.getAttribute('search');
+	//将属性值传给下一页面
+	mui.openWindow({
+		url: 'details.html',
+		id: 'details.html',
+		extras: { //对界面传值
+			_search: search
+		},
+		waiting: {
+			autoShow: false, //自动显示等待框，默认为true
+		}
+	})
 })
