@@ -1,0 +1,117 @@
+@charset "utf-8";
+.mui-bar-nav {
+	background: #fff;
+    box-shadow: none;
+	border-bottom: 1px solid #F5F5F5;
+	font-size: 0.65rem;
+}
+.mui-bar-nav a{
+	color: #de1f17;
+}
+.mui-content{
+	background: #fff;
+	min-height: 100vh;
+}
+.mui-content>p{
+	margin: 0;
+	height: 2.05rem;
+	line-height: 2.05rem;
+	padding-left: 0.6rem;
+	font-size: 0.6rem;
+	color: #202020;
+}
+.code{
+	padding: 0 0.3rem;
+	float: left;
+	height: 4.2rem;
+	width: 16rem;
+	position: relative;
+}
+.code>input{
+	border: 1px solid #ebebeb;
+	width: 3.45rem;
+	height: 3.45rem;
+	margin: 0.35rem 0 0.35rem 0.3rem;
+	font-size: 1.2rem;
+	text-align: center;
+	float: left;
+	background: #f6f6f6;
+	position: absolute;
+	right: -3.45rem;
+}
+.code>input:nth-of-type(1){
+	animation:enter1 .5s forwards;
+}
+.code>input:nth-of-type(2){
+	animation:enter2 .8s forwards;
+}
+.code>input:nth-of-type(3){
+	animation:enter3 1s forwards;
+}
+.code>input:nth-of-type(4){
+	animation:enter4 1.2s forwards;
+}
+@keyframes enter1{
+	from{
+		transform: rotate(odeg);
+		right: -3.45rem;
+	}
+	to{
+		transform: rotate(-360deg);
+		right: 11.95rem;
+	}
+}
+@keyframes enter2{
+	from{
+		transform: rotate(odeg);
+		right: -3.45rem;
+	}
+	to{
+		transform: rotate(-360deg);
+		right: 8.15rem;
+	}
+}
+@keyframes enter3{
+	from{
+		transform: rotate(odeg);
+		right: -3.45rem;
+	}
+	to{
+		transform: rotate(-360deg);
+		right: 4.35rem;
+	}
+}
+@keyframes enter4{
+	from{
+		transform: rotate(odeg);
+		right: -3.45rem;
+	}
+	to{
+		transform: rotate(-360deg);
+		right: 0.6rem;
+	}
+}
+
+.mui-content>button{
+	width: 14.8rem;
+	height: 1.6rem;
+	background: #ff8b82;
+	font-size: 0.6rem;
+	color: #fff;
+	margin: 0.8rem 0.6rem !important;
+	border: none;
+}
+.mui-content>button:active{
+	background: #ff8b82;
+	
+}
+.mui-content>button>i{
+	font-style: normal;
+}
+
+.mui-content>button>.hide{
+	display: none;
+}
+.mui-content>button>.show{
+	display: block;
+}

@@ -30,6 +30,17 @@
 		<script src="js/mui.js"></script>
 		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			document.getElementsByClassName('btn')[0].addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'code.html',
+					id: 'code.html',
+					waiting: {
+						autoShow: false, //自动显示等待框，默认为true		
+					}
+				})
+			})
+		</script>
 	</body>
 
 </html>
