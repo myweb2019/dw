@@ -19,7 +19,7 @@
 				输入手机号码,创建账户
 			</h5>
 			<div class="mui-input-row">
-				<input type="text" class="mui-input-clear" placeholder="请输入手机号码">
+				<input type="text" class="mui-input-clear" placeholder="请输入手机号码" id="user">
 				<button type="button" class="btn">下一步</button>
 			</div>
 			<div class="agreement">
@@ -29,18 +29,10 @@
 		</div>
 		<script src="js/mui.js"></script>
 		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			document.getElementsByClassName('btn')[0].addEventListener('tap',function(){
-				mui.openWindow({
-					url: 'code.html',
-					id: 'code.html',
-					waiting: {
-						autoShow: false, //自动显示等待框，默认为true		
-					}
-				})
-			})
-		</script>
+		<script src="js/api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register-next.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>
