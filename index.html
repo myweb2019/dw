@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="touch-action: none">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -39,6 +39,7 @@
 			</a>
 		</nav>
 		<!-- 追加4个子页面 首页，分类，订单，我的，-->
+		<script src="js/refresh.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var setPage = ['homePage.html', 'classify.html', 'orderForm.html', 'mine.html'];
 			var setPageStyle = {
@@ -46,6 +47,9 @@
 				bottom: '50px'
 			};
 			mui.plusReady(function() { //当mui的硬件准备完毕的时候触发
+				// //刷新页面
+				// popToTarget('mine.html', true,'customEvent');
+
 				//获取当前的窗体
 				var self = plus.webview.currentWebview();
 				//创建其他的窗体
@@ -64,5 +68,6 @@
 				plus.webview.show(tagPage, "fade-in", 100);
 			})
 		</script>
+
 	</body>
 </html>

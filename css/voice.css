@@ -67,8 +67,8 @@ body {
 .voice-button p {
 	float: left;
 	width: 100%;
-	height: 1.75rem;
-	line-height: 1.75rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
 	text-align: center;
 	margin-top: 0.95rem;
 	font-size: 0.6rem;
@@ -97,10 +97,13 @@ body {
 	}
 }
 
+.voice{
+	height: 3.45rem;
+	padding-top: 1.72rem;
+}
 #container {
-	margin-top:7.5rem;
 	width: 16rem;
-	height: 30px;
+	height: 28px;
 	text-align: center;
 }
 
@@ -147,9 +150,31 @@ body {
 	-webkit-animation: yuying1 0.6s infinite 0.8s;
 }
 #container #ten {
-	animation: yuying1 0.6s infinite s;
+	animation: yuying1 0.6s infinite 1s;
 	-webkit-animation: yuying1 0.6s infinite 1s;
 }
+#list-one{
+	animation: yuying1 0.6s infinite 0.5s;
+	-webkit-animation: yuying1 0.6s infinite 0.5s;
+}
+#list-two{
+	animation: yuying1 0.6s infinite 0.4s;
+	-webkit-animation: yuying1 0.6s infinite 0.4s;
+}
+#list-three{
+	animation: yuying1 0.6s infinite 0.3;
+	-webkit-animation: yuying1 0.6s infinite 0.3s;
+}
+#list-four{
+	animation: yuying1 0.6s infinite 0.2;
+	-webkit-animation: yuying1 0.6s infinite 0.2s;
+}
+#list-five{
+	animation: yuying1 0.6s infinite 0.1s;
+	-webkit-animation: yuying1 0.6s infinite 0.1s;
+}
+
+
 #one,
 #two,
 #three,
@@ -159,7 +184,12 @@ body {
 #seven,
 #eight,
 #nine,
-#ten{
+#ten,
+#list-one,
+#list-two,
+#list-three,
+#list-four,
+#list-five{
 	list-style: none;
 	width: 1px;
 	height: 100%;

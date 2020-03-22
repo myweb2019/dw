@@ -15,9 +15,11 @@ body{
     padding: 0;
 }
 .strring{
-	height: 17px;
+	height: 0.85rem;
 	padding-right: 0.5rem;
 	box-sizing: border-box;
+	z-index: 99999;
+	position: relative;
 }
 .strring span:nth-of-type(1){
 	display: inline-block;
@@ -36,7 +38,9 @@ body{
 	background-position:-1.1rem 0;
 	margin-left: 8px;
 }
-
+.mui-bar-nav{
+	box-shadow: none;
+}
 /* 个人信息 */
 
 .personage{
@@ -426,7 +430,29 @@ body{
 	margin: 0;
 	padding: 0;
 }
-.content ul li{
+.mui-table-view {
+	background: none;
+}
+.mui-table-view-cell:after {
+    height: 0px;
+    content: '';
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    background-color: #c8c7cc;
+}
+.mui-table-view:before,.mui-table-view:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    content: '';
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    background-color: #c8c7cc;
+}
+.content ul .mui-table-view-cell{
+	padding: 0;
 	background: #fff;
 	border-radius: 0.3rem;
 	float: left;
@@ -452,14 +478,16 @@ body{
 	white-space: nowrap;
 	width:7.35rem;
 	margin-bottom: 0;
-	margin-left: 0.35rem;
+	padding-left: 0.35rem;
+	box-sizing: border-box;
 }
 .content ul li span{
 	float: left;
 	height: 0.85rem;
 	line-height: 0.85rem;
 	width: 7.35rem;
-	margin-left: 0.35rem;
+	padding-left: 0.35rem;
+	box-sizing: border-box;
 	color: #e94840;
 	font-size: 0.45rem;
 }
@@ -473,7 +501,8 @@ body{
 	line-height: 1rem;
 	width:7.35rem;
 	margin-bottom: 0;
-	margin-left: 0.35rem;
 	font-size: 0.4rem;
 	color: #8f8f8f;
+	padding-left: 0.35rem;
+	box-sizing: border-box;
 }

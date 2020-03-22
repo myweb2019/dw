@@ -1,4 +1,4 @@
-// $("#user").focus()
+$("#user").focus()
 
 //点击下一步
 document.getElementsByClassName('btn')[0].addEventListener('tap', function() {
@@ -29,47 +29,38 @@ document.getElementsByClassName('btn')[0].addEventListener('tap', function() {
 		 * 如果不存在就跳转到验证码页面
 		 */
 		$.ajax({
-			url:http+'/code-user',
-			type:'post',
-			data:{
-				email:$("#user").val()
+			url: http + '/code-user',
+			type: 'post',
+			data: {
+				email: $("#user").val()
 			},
-			success:function(data){
+			success: function(data) {
 				data.log
-				if(data.msg == $("#user").val()){
+				if (data.msg == $("#user").val()) {
 					mui.openWindow({
 						url: 'next_login.html',
 						id: 'next_login.html',
+						extras: {
+							email:$("#user").val()
+						},
 						waiting: {
 							autoShow: false, //自动显示等待框，默认为true		
 						}
 					})
-				}else{
-					//发送验证码
-					console.log($("#user").val())
-					$.ajax({
-						url:http+'/code',
-						type:'post',
-						data:{
+				} else {
+					mui.openWindow({
+						url: 'code.html',
+						id: 'code.html',
+						extras: {
 							email:$("#user").val()
 						},
-						success:function(data){
-							if(data.status == 1){
-								mui.openWindow({
-									url: 'code.html',
-									id: 'code.html',
-									waiting: {
-										autoShow: false, //自动显示等待框，默认为true		
-									}
-								})
-							}
+						waiting: {
+							autoShow: false, //自动显示等待框，默认为true		
 						}
 					})
-					
-					
 				}
 			}
 		})
-		
+
 	}
 })

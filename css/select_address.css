@@ -36,6 +36,10 @@ body {
 .mui-content{
 	background: #F5F5F5;
 }
+/* .search-location{
+	float: left;
+	line-height: 1.5rem;
+} */
 .select-address{
 	position: fixed;
 	width: 100%;
@@ -44,22 +48,26 @@ body {
 	height: 1.5rem;
 	width: 100%;
 	background: #fff;
+	padding-right: 10px;
 }
-.address-search>span{
+.address-search>p{
 	float: left;
-	width: 2.6rem;
+	width: 20%;
 	height: 1.5rem;
 	font-size: 0.6rem;
 	text-align: center;
 	line-height: 1.5rem;
+	/* overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis; */
 }
-.address-search>span>i{
+.address-search>p>i{
 	display: inline-block;
 	font-size: 0.7rem;
 }
 .address-search label{
 	float: left;	
-	width: 13rem;
+	width: 80%;
 	height: 1.3rem;
 	line-height: 1.3rem;
 	background: #f5f5f5;
@@ -72,20 +80,26 @@ body {
 	margin: 0.4rem 0.2rem 0 0.4rem;
 }
 #icon{
+	vertical-align: top;
 	font-size: 0.7rem;
 	margin: 0.3rem 0.2rem 0 0.4rem;
+}
+.mui-input-row{
+	display: inline-block;
+	width: 9rem;
+	margin: 0;
+	padding: 0;
 }
 .address-search label input{
 	margin: 0 !important;
 	padding: 0 !important;
-	width: 11.6rem;
+	width: 9.5rem;
 	height: 1.3rem;
 	background: #f5f5f5;
 	border: none;
 	font-size: 0.55rem;
 	color: #000000;
 	border-radius:5px;
-	float: right;
 }
 .address-search input::placeholder{
 	font-size: 0.55rem;

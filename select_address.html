@@ -6,7 +6,8 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/select_address.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select_address.css" />
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=9b307288239d000d8df2a5e9d82cb148"></script>
 	</head>
 
 	<body>
@@ -17,14 +18,16 @@
 		<div class="mui-content">
 			<div class="select-address">
 				<div class="address-search">
-					<span class="search-location">广安<i class="mui-icon mui-icon-arrowdown"></i></span>
-					<label for="search">
+					<p class="search-location">
+						<span id="address">广安</span>
+						<i class="mui-icon mui-icon-arrowdown"></i>
+					</p>
+					<label id="search">
 						<span class="mui-icon mui-icon-search"></span>
 						搜索小区名/大厦名
-						<!-- <input type="text" placeholder="搜索小区名/大厦名" id="search"> -->
 					</label>
 				</div>
-				<div class="map">地图</div>
+				<div class="map" id="map"></div>
 			</div>
 			<!-- 周边地址 -->
 			<div class="ambitus">
@@ -47,5 +50,6 @@
 	<script src="js/select_address.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		mui.init()
+		
 	</script>
 </html>

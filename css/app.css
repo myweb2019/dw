@@ -35,11 +35,12 @@
 #search{
 	display: inline-block;
 	width: 13.8rem !important;
-	height: 30px!important;
+	height: 26px!important;
+	line-height: 26px;
 	padding: 0!important;
-	margin: 6px 0 0 8px!important;
+	margin: 9px 0 0 8px!important;
 	border-radius: 12px !important;
-	background: #e7e4e4 !important;
+	background: #eee !important;
 	border: none !important;
 	padding-left: 5px !important;
 	font-size: 12px;
@@ -57,7 +58,7 @@
 	color: #9b9b9b !important;
 	/* margin-left: -8px; */
 	margin: 0 !important;
-	padding: 7px 3px 0 0 !important;
+	padding: 5px 3px 0 0 !important;
 }
 input{
 	display: inline-block;

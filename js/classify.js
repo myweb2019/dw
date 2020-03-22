@@ -8,9 +8,21 @@ mui.plusReady(function() {
 	}); //取消滚动条
 });
 
-mui.init({
-	// swipeBack: false //启用右滑关闭功能
-});
+//搜索
+document.getElementsByClassName('search')[0].addEventListener('tap',function(){
+	mui.openWindow({
+		url: 'search.html',
+		id: 'search.html',
+		extras: {
+			
+		},
+		waiting: {
+			autoShow: false, //自动显示等待框，默认为true		
+		}
+	})
+})
+
+
 var controls = document.getElementById("segmentedControls");
 var contents = document.getElementById("segmentedControlContents");
 var html = [];
@@ -299,9 +311,7 @@ $.ajax({
 					for (var i = 1; i < length; i++) {
 						var offsetTop = contentListElem[i].offsetTop;
 						var Wi = contentListElem[i].offsetHeight
-						console.log(offsetTop,Wi);
 						if (offsetTop+50>= maxScroll) {
-							console.log(1)
 							var height = Math.max(offsetTop + 50 - maxScroll, 50);
 							var totalHeight = 0;
 							var heights = [];

@@ -14,7 +14,48 @@ document.getElementById('city').addEventListener('tap', function() {
 			autoShow: false, //自动显示等待框，默认为true		
 		}
 	})
+});
+
+//获取地理位置
+mui.plusReady(function() {
+	if(plus.os.name=="Android"){   
+	    var context = plus.android.importClass("android.content.Context"); 
+	    var locationManager=plus.android.importClass("android.location.LocationManager"); 
+	    var main=plus.android.runtimeMainActivity(); 
+	    var mainSvr=main.getSystemService(context.LOCATION_SERVICE); 
+	    androidIsOpen=mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER); 
+	    if(androidIsOpen){ 
+	       plus.geolocation.getCurrentPosition(successCB, errorCB, {
+			   maximumAge:5000,
+			   geocode:true
+		   });
+	       //成功回调
+	       function successCB(data) {
+	       	document.getElementById('city').innerHTML =data.address.city+data.address.district;
+	       };
+	       //失败回调
+	       function errorCB() {
+	       	alert('获取失败')
+	       };
+	    } 
+	    else{ 
+	        mui.toast("获取地理位置失败!");    
+	    } 
+	} 
 })
+
+
+//点击搜索
+document.getElementsByClassName('search')[0].addEventListener('tap', function() {
+	mui.openWindow({
+		url: 'search.html',
+		id: 'search.html',
+		waiting: {
+			autoShow: true, //自动显示等待框，默认为true		
+		}
+	})
+})
+
 //轮播图
 $.ajax({
 	type: 'GET',
@@ -204,8 +245,8 @@ mui(".shopping").on('tap', 'h2', function() {
 })
 
 
-async function shopping(){
-	return[
+async function shopping() {
+	return [
 		//家庭保洁
 		$.ajax({
 			type: 'GET',
@@ -214,7 +255,7 @@ async function shopping(){
 				ulModel(data, 0);
 			}
 		}),
-		
+
 		//上门按摩
 		$.ajax({
 			type: 'GET',
@@ -285,19 +326,19 @@ async function shopping(){
 			url: "http://120.55.103.137/baby-sitter",
 			success: function(data) {
 				ulModel(data, 9);
-				
+
 			}
 		})
 	]
-		
+
 }
 //获取detailItem跳转到商品详情页面
 link();
 
-async function link(){
+async function link() {
 	await shopping();
-	mui('.filterItems').on('tap','.detailItem',function() {
-		let search =this.getAttribute('search');
+	mui('.filterItems').on('tap', '.detailItem', function() {
+		let search = this.getAttribute('search');
 		//将属性值传给下一页面
 		mui.openWindow({
 			url: 'details.html',
@@ -305,7 +346,7 @@ async function link(){
 			extras: { //对界面传值
 				_search: search
 			},
-			
+
 			waiting: {
 				autoShow: false, //自动显示等待框，默认为true
 			}

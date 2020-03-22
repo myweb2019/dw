@@ -6,251 +6,196 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/mine.css"/>
-		<style type="text/css">
-			 .mui-bar{
-				 opacity: 0;
-				 background: #fff;
-				 transition:1s;
-				 z-index:0
-			 }
-			 .show_active{
-				 opacity: 1;
-				 display: block;
-				 z-index:10
-			 }
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/mine.css" />
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav" id="show">
-			<h1 class="mui-title">我的</h1>
+		<header class="mui-bar mui-bar-nav mui-bar-transparent" data-offset="70" id="show">
+			<h1 class="mui-title"></h1>
 		</header>
-		<div class="mui-scroll-wrapper">
-		    <div class="mui-scroll">
-		        <!--这里放置真实显示的DOM内容-->
-		<div class="mui-content">
-			<div class="img">
-				<div class="strring mui-text-right">
-					<span class="set"></span>
-					<span></span>
-				</div>
-				<!-- 头像 -->
-				<div class="personage">
-					<div class="photo">
-						<img src="images/photo.png">
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--这里放置真实显示的DOM内容-->
+				<div class="mui-content">
+					<div class="img">
+						<div class="strring mui-text-right">
+							<span class="set"></span>
+							<span></span>
+						</div>
+						<!-- 头像 -->
+						<div class="personage">
+							<div class="photo">
+								<img src="images/photo.png" id="Img">
+							</div>
+							<div class="personage_right">
+								<p id="name"></p>
+								<span>
+									<i></i>
+									普通会员
+								</span>
+							</div>
+							<span class="mui-icon mui-icon-forward"></span>
+						</div>
 					</div>
-					<div class="personage_right">
-						<p>u29550480</p>
-						<span>
-							<i></i>
-							普通会员
-						</span>
+					<!-- 购物信息 -->
+					<div class="shopping_message">
+						<ul>
+							<li>
+								<p>0</p>
+								<p>购物车</p>
+							</li>
+							<li>
+								<p>0</p>
+								<p>关注服务</p>
+							</li>
+							<li>
+								<p>0</p>
+								<p>关注技师</p>
+							</li>
+							<li id="shopping">
+								<p>0</p>
+								<p>关注店铺</p>
+							</li>
+						</ul>
 					</div>
-					<span class="mui-icon mui-icon-forward"></span>
-				</div>
-			</div>
-			<!-- 购物信息 -->
-			<div class="shopping_message">
-				<ul>
-					<li>
-						<p>0</p>
-						<p>购物车</p>
-					</li>
-					<li>
-						<p>0</p>
-						<p>关注服务</p>
-					</li>
-					<li>
-						<p>0</p>
-						<p>关注技师</p>
-					</li>
-					<li id="shopping">
-						<p>0</p>
-						<p>关注店铺</p>
-					</li>
-				</ul>
-			</div>
-			<!-- 我的订单 -->
-			<div class="order_form">
-				<h4>
-					我的订单
-					<span class="mui-icon mui-icon-forward mui-pull-right"></span>
-				</h4>
-				<div class="sort">
-					<ul>
-						<li>
-							<img src="images/fk.png">
-							<p>待付款</p>
-						</li>
-						<li>
-							<img src="images/jx.png">
-							<p>进行中</p>
-						</li>
-						<li>
-							<img src="images/wc.png">
-							<p>已完成</p>
-						</li>
-						<li>
-							<img src="images/pj.png">
-							<p>待评价</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- 我的钱包 -->
-			<div class="my_wallet">
-				<h4>我的钱包</h4>
-				<div class="money">
-					<ul>
-						<li>
-							<p>10<i>.00</i></p>
-							<p>
-								余额<span>充值</span>
-							</p>
-						</li>
-						<li>
-							<p>0</p>
-							<p>代金券</p>
-						</li>
-						<li>
-							<p>10<i>.00</i>
-							</p>
-							<p>
-								余额<span>提现</span>
-							</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- 需求 -->
-			<div class="demand">
-				<ul>
-					<li class="sprites1">
-						<span></span>
-						<p>我的需求</p>
-					</li>
-					<li class="sprites2">
-						<span></span>
-						<p>分享有礼</p>
-					</li>
-					<li class="sprites3">
-						<span></span>
-						<p>领劵中心</p>
-					</li>
-					<li class="sprites4">
-						<span></span>
-						<p>联系客服</p>
-					</li>
-					<li class="sprites5">
-						<span></span>
-						<p>我的评价</p>
-					</li>
-					<li class="sprites6">
-						<span></span>
-						<p>投诉中心</p>
-					</li>
-					<li class="sprites7">
-						<span></span>
-						<p>商家入驻</p>
-					</li>
-					<li class="sprites8">
-						<span></span>
-						<p>技师工具</p>
-					</li>
-				</ul>
-			</div>
-			<!-- 浏览记录 -->
-			<div class="history">
-				<h4 id="more">
-					浏览历史
-					<span class="mui-icon mui-icon-forward mui-pull-right"></span>
-					<span class="mui-pull-right">查看更多</span>
-				</h5>
-				<ul>
-					<li>
-						<img src="images/fw/Household%20cleaning02.jpg" alt="">
-						<p>中式传统推拿</p>
-						<span><strong>199</strong>元/次</span>
-					</li>
-					<li>
-						<img src="images/fw/Household%20cleaning02.jpg" alt="">
-						<p>中式传统推拿</p>
-						<span><strong>199</strong>元/次</span>
-					</li>
-					<li>
-						<img src="images/fw/Household%20cleaning02.jpg" alt="">
-						<p>中式传统推拿</p>
-						<span><strong>199</strong>元/次</span>
-					</li>
-					<li>
-						<img src="images/fw/Household%20cleaning02.jpg" alt="">
-						<p>中式传统推拿</p>
-						<span><strong>199</strong>元/次</span>
-					</li>
-				</ul>
-			</div>
-			<!-- 为你推荐 -->
-			<div class="recommended">
-				<h5 class="mui-text-center">
-					<span></span>
-					为你推荐
-				</h5>
-				<div class="content">
-					<ul>
-						<li>
-							<img src="images/fw/Household%20cleaning01.jpg">
-							<p>中式传统推拿</p>
-							<span><strong>199</strong>元/次</span>
-							<p>直选到家</p>
-						</li>
-						<li>
-							<img src="images/fw/Household%20cleaning01.jpg">
-							<p>中式传统推拿</p>
-							<span><strong>199</strong>元/次</span>
-							<p>直选到家</p>
-						</li>
-					</ul>
+					<!-- 我的订单 -->
+					<div class="order_form">
+						<h4>
+							我的订单
+							<span class="mui-icon mui-icon-forward mui-pull-right"></span>
+						</h4>
+						<div class="sort">
+							<ul>
+								<li>
+									<img src="images/fk.png">
+									<p>待付款</p>
+								</li>
+								<li>
+									<img src="images/jx.png">
+									<p>进行中</p>
+								</li>
+								<li>
+									<img src="images/wc.png">
+									<p>已完成</p>
+								</li>
+								<li>
+									<img src="images/pj.png">
+									<p>待评价</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 我的钱包 -->
+					<div class="my_wallet">
+						<h4>我的钱包</h4>
+						<div class="money">
+							<ul>
+								<li>
+									<p>10<i>.00</i></p>
+									<p>
+										余额<span>充值</span>
+									</p>
+								</li>
+								<li>
+									<p>0</p>
+									<p>代金券</p>
+								</li>
+								<li>
+									<p>10<i>.00</i>
+									</p>
+									<p>
+										余额<span>提现</span>
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 需求 -->
+					<div class="demand">
+						<ul>
+							<li class="sprites1">
+								<span></span>
+								<p>我的需求</p>
+							</li>
+							<li class="sprites2">
+								<span></span>
+								<p>分享有礼</p>
+							</li>
+							<li class="sprites3">
+								<span></span>
+								<p>领劵中心</p>
+							</li>
+							<li class="sprites4">
+								<span></span>
+								<p>联系客服</p>
+							</li>
+							<li class="sprites5">
+								<span></span>
+								<p>我的评价</p>
+							</li>
+							<li class="sprites6">
+								<span></span>
+								<p>投诉中心</p>
+							</li>
+							<li class="sprites7">
+								<span></span>
+								<p>商家入驻</p>
+							</li>
+							<li class="sprites8">
+								<span></span>
+								<p>技师工具</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 浏览记录 -->
+					<div class="history">
+						<h4 id="more">
+							浏览历史
+							<span class="mui-icon mui-icon-forward mui-pull-right"></span>
+							<span class="mui-pull-right">查看更多</span>
+							</h5>
+							<ul>
+								<li>
+									<img src="images/fw/Household%20cleaning02.jpg" alt="">
+									<p>中式传统推拿</p>
+									<span><strong>199</strong>元/次</span>
+								</li>
+								<li>
+									<img src="images/fw/Household%20cleaning02.jpg" alt="">
+									<p>中式传统推拿</p>
+									<span><strong>199</strong>元/次</span>
+								</li>
+								<li>
+									<img src="images/fw/Household%20cleaning02.jpg" alt="">
+									<p>中式传统推拿</p>
+									<span><strong>199</strong>元/次</span>
+								</li>
+								<li>
+									<img src="images/fw/Household%20cleaning02.jpg" alt="">
+									<p>中式传统推拿</p>
+									<span><strong>199</strong>元/次</span>
+								</li>
+							</ul>
+					</div>
+					<!-- 为你推荐 -->
+					<div class="recommended">
+						<h5 class="mui-text-center">
+							<span></span>
+							为你推荐
+						</h5>
+						<div class="content">
+							<!--数据列表-->
+							<ul class="mui-table-view mui-table-view-chevron"></ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		    </div>
-		</div>
-
-		
 		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="js/mui.js"></script>
 		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/api.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/mine.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <script src="js/public.js" type="text/javascript" charset="utf-8"></script> -->
-		<script type="text/javascript">
-			var scroll = mui('.mui-scroll-wrapper').scroll({
-				 scrollY: true, //是否竖向滚动
-				 scrollX: false, //是否横向滚动
-				 startX: 0, //初始化时滚动至x
-				 startY: 0, //初始化时滚动至y
-				 indicators: false, //是否显示滚动条
-				 deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
-				 bounce: true //是否启用回弹
-			}); 
-			    document.querySelector('.mui-scroll-wrapper').addEventListener('scroll', function (e ) { 
-			      console.log(); 
-				  if(scroll.y<=(-10)){
-					 mui("#show")[0].classList.add('show_active');
-				  }else{
-					 mui("#show")[0].classList.remove('show_active');
-				  }
-			    });
-				//获取状态栏的高度
-		mui.plusReady(function() {
-			var StatusbarHeight = plus.navigator.getStatusbarHeight();
-			var heightS = StatusbarHeight+44+'px';
-			//设置hender的高度
-			document.getElementsByClassName('mui-bar-nav')[0].style.height = heightS;
-			//设置h1的top值
-			document.getElementsByClassName('mui-title')[0].style.marginTop = StatusbarHeight +'px';
-		})	
-		</script>
 	</body>
 
 </html>

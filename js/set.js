@@ -24,7 +24,7 @@ document.getElementById('logout').addEventListener('tap',function(){
 			+'<p>确认要取消关注吗？</p>'
 			+'<div class="btn">'
 				+'<button type="button" id="cancel">取消</button>'
-				+'<button type="button">确定</button>'
+				+'<button type="button" id="sure">确定</button>'
 			+'</div>'
 		+'</div>'
 	$('.mui-backdrop').html(str);
@@ -32,5 +32,23 @@ document.getElementById('logout').addEventListener('tap',function(){
 	document.getElementById('cancel').addEventListener('tap', function() {
 		maskF = true; //调用close进行关闭蒙版时，在创建蒙版的回掉函数中必须返回true,否则无法关闭 
 		mask.close();
+	});
+	
+	//退出
+	document.getElementById('sure').addEventListener('tap', function() {
+		maskF = true; //调用close进行关闭蒙版时，在创建蒙版的回掉函数中必须返回true,否则无法关闭 
+		mask.close();
+		
+		$.ajax({
+			url:http+'/logout',
+			type:'get',
+			success:function(data){
+				if(data.status == 1){
+					popToTarget('mine.html',false,'customEvent');
+				}
+			}
+		})
+		
 	})
+	
 })

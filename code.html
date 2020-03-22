@@ -20,32 +20,21 @@
 				<input type="text" maxlength="1" onkeyup="moveNext(this,0)">
 				<input type="text" maxlength="1" onkeyup="moveNext(this,1)">
 				<input type="text" maxlength="1" onkeyup="moveNext(this,2)">
-				<input type="text" maxlength="1" onkeyup="moveNext(this,3)">
+				<input type="text" maxlength="1" onkeyup="moveNext(this,3)" id="submit">
 			</div>
-			<button type="button">
+			<button type="button" id="send">
 				<i>获取验证码</i>
-				<span class="hide"><i>60s</i>后可重新发送</span>
+				<span style="display: none;"><i>60</i>s后可重新发送</span>
 			</button>
 		</div>
 	</body>
-	<script src="js/mui.js"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/api.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/code.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		function moveNext(object, index) {
-			if (object.value.length == 1) {
-				if (index >= 3) {
-					return;
-				}
-				document.getElementsByTagName('input')[index + 1].focus();
-			}
-			if(object.value.length < 1) {
-				if (index < 1) {
-					return;
-				}
-				document.getElementsByTagName('input')[index -1].focus();
-			}
-		}
+		mui.init()
 	</script>
 </html>

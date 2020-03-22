@@ -82,7 +82,7 @@
 }
 .form>button:nth-of-type(1){
 	width: 13.65rem;
-	height: 28px;
+	height: 1.4rem;
 	background: #dddddd;
 	color: #fff;
 	border: none;
@@ -92,7 +92,7 @@
 }
 .form>button:nth-of-type(2){
 	width: 13.65rem;
-	height: 28px;
+	height: 1.4rem;
 	border: 1px solid #dddddd;
 	border-radius: 14px;
 	color: #fff;
