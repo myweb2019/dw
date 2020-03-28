@@ -13,7 +13,6 @@ function popToTarget(targetId, isReload, eventName, data) {
 	//获取当前页面
 	var current = plus.webview.currentWebview();
 	if (current === target) {
-
 		return;
 	}
 	//将要关闭的页面

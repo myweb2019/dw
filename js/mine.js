@@ -1,4 +1,3 @@
-//设置头部
 //获取状态栏的高度
 mui.plusReady(function() {
 	var wv = plus.webview.currentWebview();
@@ -25,6 +24,7 @@ mui.plusReady(function() {
 		}
 	}]
 	ws.draw(tags);
+
 	ws.setStyle({
 		"titleNView": {
 			titleText: '我的', //导航栏标题
@@ -46,7 +46,7 @@ mui.plusReady(function() {
 					fontSrc: 'fonts/iconfont3.ttf',
 					float: 'right', //按钮不像绘制的方法，是不能用position绝对定位的，只能左右浮动
 					fontSize: '25px',
-					marginLeft:'20px',
+					marginLeft: '20px',
 					onclick: clickButtonSet, //按钮有个好处可以直接绑定事件，如果没有事件，跟绘制没有差别了。
 					background: 'rgba(0,0,0,0)'
 				}
@@ -54,8 +54,6 @@ mui.plusReady(function() {
 
 		}
 	})
-	//设置h1的top值
-	// document.getElementsByClassName('mui-title')[0].style.marginTop = StatusbarHeight + 'px';
 })
 //点击设置
 function clickButtonSet() {
@@ -67,9 +65,7 @@ function clickButtonSet() {
 		}
 	})
 }
-// document.querySelector('.set').addEventListener("tap", function() {
-// 	
-// });
+
 
 //点击店铺打开我的关注
 document.getElementById('shopping').addEventListener('tap', function() {
@@ -159,8 +155,6 @@ window.addEventListener('customEvent', function(event) {
 	//在此处添加要刷新的内容（或其他操作）
 	getUser();
 });
-
-
 getUser()
 
 function getUser() {
@@ -179,10 +173,12 @@ function getUser() {
 		success: function(data) {
 			if (data.status == 1) {
 				//登录状态
-				$('#name').html(data.username)
-				$('#Img').attr('src', data.userimg)
-
-				document.querySelector('.personage').addEventListener("tap", function() {
+				$('.name').html(data.username)
+				$('.Img').attr('src', data.userimg)
+				//显示登录的状态
+				$('.personage').css('display', 'none')
+				$('.yet-login').css('display', 'block')
+				document.getElementsByClassName('yet-login')[0].addEventListener('tap', function() {
 					mui.openWindow({
 						url: 'per_operation.html',
 						id: 'per_operation.html',
@@ -190,12 +186,14 @@ function getUser() {
 							autoShow: false, //自动显示等待框，默认为true		
 						}
 					})
-				});
-				return
+				})
 			} else {
-				$('#name').html('请点击登录')
-				$('#Img').attr('src','images/photo.png')
-				document.querySelector('.personage').addEventListener("tap", function() {
+				$('.name').html('请点击登录')
+				$('.Img').attr('src', 'images/photo.png')
+				//显示登录的状态
+				$('.personage').css('display', 'block')
+				$('.yet-login').css('display', 'none')
+				document.getElementsByClassName('personage')[0].addEventListener('tap', function() {
 					mui.openWindow({
 						url: 'login.html',
 						id: 'login.html',
@@ -203,8 +201,10 @@ function getUser() {
 							autoShow: false, //自动显示等待框，默认为true		
 						}
 					})
-				});
+				})
 			}
 		}
 	})
 }
+
+//判断是否是登录状态

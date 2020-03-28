@@ -35,7 +35,6 @@ document.getElementsByClassName('btn')[0].addEventListener('tap', function() {
 				email: $("#user").val()
 			},
 			success: function(data) {
-				data.log
 				if (data.msg == $("#user").val()) {
 					mui.openWindow({
 						url: 'next_login.html',

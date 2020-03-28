@@ -53,10 +53,11 @@ body{
 }
 /* 个人信息 */
 
-.personage{
+.personage,.yet-login{
 	height: 50px;
 	margin-top: 40px;
 }
+
 .photo{
 	margin-left: 1rem;
 	height: 50px;
@@ -79,6 +80,12 @@ body{
 	line-height: 36px;
 	margin: 0;
 }
+.personage>.personage_right>p{
+	color: #fff;
+	height: 50px;
+	line-height: 50px;
+	margin: 0;
+}
 .personage_right>span{
 	line-height: 18px;
 	color: #fff;
@@ -98,14 +105,13 @@ body{
 	background-size: 100%;
 	vertical-align: top;
 }
-.personage>span{
+.personage>span,.yet-login>span{
 	display: inline-block;
 	font-size: 19px;
 	vertical-align: top;
 	margin-top: 17px;
 	color: #fff;
 }
-
 /* 购物信息 */
 .shopping_message{
 	width: 15rem;

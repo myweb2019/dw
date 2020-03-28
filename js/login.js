@@ -23,12 +23,11 @@ mui.plusReady(function () {
 			},
 			success:function(data){
 				if(data.status == 1){
-					console.log(data)
 					//设置本地存储
 					storge.setlocalStorage('token',data.token);
 					storge.setlocalStorage('id',data.id);
+					
 					popToTarget('mine.html',false,'customEvent');
-	
 				}else{
 					mui.toast('密码账户错误!', {
 						duration: 'short',

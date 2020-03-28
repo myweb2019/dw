@@ -10,23 +10,28 @@
 	</head>
 
 	<body>
-		<!-- <header class="mui-bar mui-bar-nav mui-bar-transparent" data-offset="70" id="show">
-			<h1 class="mui-title">我的
-				<span class="set"></span>
-			</h1>
-			
-		</header> -->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
 				<!--这里放置真实显示的DOM内容-->
 				<div class="mui-content">
 					<div class="img">
-						<div class="personage">
+						<!-- 没有登录 -->
+						<div class="personage" style="display: block;">
 							<div class="photo">
-								<img src="images/photo.png" id="Img">
+								<img src="images/photo.png" class="Img">
 							</div>
 							<div class="personage_right">
-								<p id="name"></p>
+								<p class="name"></p>
+							</div>
+							<span class="mui-icon mui-icon-forward"></span>
+						</div>
+						<!-- 已经登录的 -->
+						<div class="yet-login" style="display: none;">
+							<div class="photo">
+								<img src="images/photo.png" class="Img">
+							</div>
+							<div class="personage_right">
+								<p class="name"></p>
 								<span>
 									<i></i>
 									普通会员
