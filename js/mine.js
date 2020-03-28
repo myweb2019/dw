@@ -6,37 +6,59 @@ mui.plusReady(function() {
 		'scrollIndicator': 'none'
 	}); //取消滚动条
 
-	var StatusbarHeight = plus.navigator.getStatusbarHeight();
-	var heightS = StatusbarHeight + 44 + 'px';
+	// var StatusbarHeight = plus.navigator.getStatusbarHeight();
+	// var heightS = StatusbarHeight + 44 + 'px';
 	//设置hender的高度
-	document.getElementsByClassName('mui-bar-nav')[0].style.height = heightS;
+	// document.getElementsByClassName('mui-bar-nav')[0].style.height = heightS;
 
 
 	var ws = plus.webview.currentWebview();
+	var tags = [{ //用图片做图标
+		id: 'img',
+		tag: 'span',
+		position: {
+			backgroundImage: "url('/images/ps2.png')",
+			backgroundSize: 'auto 21px',
+			backgroundPosition: "-1.1rem 0",
+			width: "21px",
+			height: "21px"
+		}
+	}]
+	ws.draw(tags);
 	ws.setStyle({
 		"titleNView": {
-			backgroundColor: '#fff', //导航栏背景色
 			titleText: '我的', //导航栏标题
 			titleColor: '#000000', //文字颜色
 			type: 'transparent', //透明渐变样式
-			autoBackButton: false, //自动绘制返回箭头
-			// buttons: [{
-			// 	text: '',
-			// 	float: 'right',
-			// 	type: 'home',
-			// 	onclick: "javascript:plus.webview.currentWebview().evalJS('shareHref();')"
-			// }],
+			tags: tags,
 			splitLine: { //底部分割线
 				color: '#cccccc'
-			}
+			},
+			buttons: [{
+					text: '\ue607',
+					fontSrc: 'fonts/iconfont3.ttf',
+					float: 'right', //按钮不像绘制的方法，是不能用position绝对定位的，只能左右浮动
+					fontSize: '28px',
+					background: 'rgba(0,0,0,0)',
+				},
+				{
+					text: '\ue60c',
+					fontSrc: 'fonts/iconfont3.ttf',
+					float: 'right', //按钮不像绘制的方法，是不能用position绝对定位的，只能左右浮动
+					fontSize: '25px',
+					marginLeft:'20px',
+					onclick: clickButtonSet, //按钮有个好处可以直接绑定事件，如果没有事件，跟绘制没有差别了。
+					background: 'rgba(0,0,0,0)'
+				}
+			]
+
 		}
 	})
 	//设置h1的top值
-	document.getElementsByClassName('mui-title')[0].style.marginTop = StatusbarHeight + 'px';
+	// document.getElementsByClassName('mui-title')[0].style.marginTop = StatusbarHeight + 'px';
 })
-
 //点击设置
-document.querySelector('.set').addEventListener("tap", function() {
+function clickButtonSet() {
 	mui.openWindow({
 		url: 'set.html',
 		id: 'set.html',
@@ -44,7 +66,10 @@ document.querySelector('.set').addEventListener("tap", function() {
 			autoShow: false, //自动显示等待框，默认为true		
 		}
 	})
-});
+}
+// document.querySelector('.set').addEventListener("tap", function() {
+// 	
+// });
 
 //点击店铺打开我的关注
 document.getElementById('shopping').addEventListener('tap', function() {
@@ -83,17 +108,7 @@ mui.init({
 		}
 	}
 });
-//显示导航
-// window.onscroll = function() {
-// 	//变量t是滚动条滚动时，距离顶部的距离
-// 	var t = document.documentElement.scrollTop || document.body.scrollTop;
-// 	//当滚动到距离顶部200px时，返回顶部的锚点显示
-// 	if (t >= 10) {
-// 		mui("#show")[0].classList.add('show_active');
-// 	} else { //恢复正常
-// 		mui("#show")[0].classList.remove('show_active')
-// 	}
-// }
+
 var count = 1;
 
 function pullupRefresh() {
@@ -149,14 +164,24 @@ window.addEventListener('customEvent', function(event) {
 getUser()
 
 function getUser() {
+	//获取本地token看本地是否有,如果有就说明是登录状态
+	var id = storge.getlocalStorage('id')
 	$.ajax({
 		url: http + '/personal',
 		type: 'get',
+		data: {
+			id: id
+		},
+		headers: {
+			'Content-Type': 'application/json;charset=utf8',
+			'token': localStorage.getItem('token'),
+		},
 		success: function(data) {
 			if (data.status == 1) {
-				// //登录状态
+				//登录状态
 				$('#name').html(data.username)
-				$('#Img').src = data.userimg
+				$('#Img').attr('src', data.userimg)
+
 				document.querySelector('.personage').addEventListener("tap", function() {
 					mui.openWindow({
 						url: 'per_operation.html',
@@ -166,9 +191,10 @@ function getUser() {
 						}
 					})
 				});
-
+				return
 			} else {
 				$('#name').html('请点击登录')
+				$('#Img').attr('src','images/photo.png')
 				document.querySelector('.personage').addEventListener("tap", function() {
 					mui.openWindow({
 						url: 'login.html',
@@ -181,5 +207,4 @@ function getUser() {
 			}
 		}
 	})
-
 }

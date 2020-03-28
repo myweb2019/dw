@@ -34,8 +34,11 @@ mui.plusReady(function() {
 					pass: pass
 				},
 				success: function(data) {
+					console.log(data.token,data.id)
 					if (data.status == 1) {
-						popToTarget('mine.html',true,'customEvent');
+						storge.setlocalStorage('token',data.token);
+						storge.setlocalStorage('id',data.id);
+						popToTarget('mine.html',false,'customEvent');
 					} else if (data.status == 2) {
 						mui.toast('昵称已经存在!', {
 							duration: 'short',
@@ -64,6 +67,8 @@ mui.plusReady(function() {
 			},
 			success: function(data) {
 				if (data.status == 1) {
+					storge.setlocalStorage('token',data.token);
+					storge.setlocalStorage('id',data.id);
 					popToTarget('mine.html',false,'customEvent');
 				}
 			}
