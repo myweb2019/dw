@@ -5,13 +5,12 @@ mui.plusReady(function () {
 	var search = cw._search
 	$.ajax({
 		type:'get',
-		url:'http://120.55.103.137/particulars?search='+search,
+		url:http+'/particulars?search='+search,
 		success:function(data){
 			model(data);
-			select_type()
+			select_type();
 		}
-	})
-	
+	})	
 })
 
 

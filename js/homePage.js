@@ -335,6 +335,7 @@ async function shopping() {
 //获取detailItem跳转到商品详情页面
 link();
 
+//点击到详情页面
 async function link() {
 	await shopping();
 	mui('.filterItems').on('tap', '.detailItem', function() {
@@ -350,7 +351,7 @@ async function link() {
 			waiting: {
 				autoShow: false, //自动显示等待框，默认为true
 			}
-		})
+		});
 	})
 }
 

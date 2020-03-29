@@ -1,17 +1,9 @@
-//获取状态栏的高度
+//设置头部
 mui.plusReady(function() {
-	var wv = plus.webview.currentWebview();
-	wv.setStyle({
+	var ws = plus.webview.currentWebview();
+	ws.setStyle({
 		'scrollIndicator': 'none'
 	}); //取消滚动条
-
-	// var StatusbarHeight = plus.navigator.getStatusbarHeight();
-	// var heightS = StatusbarHeight + 44 + 'px';
-	//设置hender的高度
-	// document.getElementsByClassName('mui-bar-nav')[0].style.height = heightS;
-
-
-	var ws = plus.webview.currentWebview();
 	var tags = [{ //用图片做图标
 		id: 'img',
 		tag: 'span',
@@ -78,7 +70,36 @@ document.getElementById('shopping').addEventListener('tap', function() {
 	})
 })
 
-
+//浏览历史
+$.ajax({
+	url: http + '/userhistory',
+	type: 'get',
+	success: function(data) {
+		if (data.status == 200) {
+			var str = '';
+			if(data.length<4){
+				for (var i = 0; i < data.length; i++) {
+					console.log(data.json[i])
+					str += '<li>' +
+						'<img src="' + data.json[i].url + '" alt="">' +
+						'<p>' + data.json[i].title + '</p>' +
+						'<span><strong>' + data.json[i].price + '</strong>' + data.json[i].unit + '</span>' +
+						'</li>'
+				}
+			}else{
+				for (var i = 0; i < 4; i++) {
+					console.log(data.json[i])
+					str += '<li>' +
+						'<img src="' + data.json[i].url + '" alt="">' +
+						'<p>' + data.json[i].title + '</p>' +
+						'<span><strong>' + data.json[i].price + '</strong>' + data.json[i].unit + '</span>' +
+						'</li>'
+				}
+			}
+			$('#history-list').html(str)
+		}
+	}
+})
 //点击浏览历史更多
 document.getElementById('more').addEventListener('tap', function() {
 	mui.openWindow({
@@ -130,13 +151,14 @@ function pullupRefresh() {
 					table.appendChild(li);
 					li.setAttribute("search", data.data[i].search)
 				}
-
 				mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > Math.ceil(data.allPage)));
 			}
 		});
 	}, 1500);
 
 }
+
+//商品详情
 mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
 	var search = this.getAttribute('search')
 	mui.openWindow({
@@ -150,12 +172,14 @@ mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
 		}
 	})
 })
+
+//局部刷新登录状态
 window.addEventListener('customEvent', function(event) {
 	//通过event.detail可获得传递过来的参数内容
 	//在此处添加要刷新的内容（或其他操作）
 	getUser();
 });
-getUser()
+getUser();
 
 function getUser() {
 	//获取本地token看本地是否有,如果有就说明是登录状态
@@ -176,35 +200,55 @@ function getUser() {
 				$('.name').html(data.username)
 				$('.Img').attr('src', data.userimg)
 				//显示登录的状态
-				$('.personage').css('display', 'none')
-				$('.yet-login').css('display', 'block')
-				document.getElementsByClassName('yet-login')[0].addEventListener('tap', function() {
-					mui.openWindow({
-						url: 'per_operation.html',
-						id: 'per_operation.html',
-						waiting: {
-							autoShow: false, //自动显示等待框，默认为true		
-						}
-					})
-				})
+				// $('.personage').css('display', 'none')
+				// $('.yet-login').css('display', 'block')
+				// document.getElementsByClassName('yet-login')[0].addEventListener('tap', function() {
+				// 	mui.openWindow({
+				// 		url: 'per_operation.html',
+				// 		id: 'per_operation.html',
+				// 		waiting: {
+				// 			autoShow: false, //自动显示等待框，默认为true		
+				// 		}
+				// 	})
+				// })
 			} else {
 				$('.name').html('请点击登录')
 				$('.Img').attr('src', 'images/photo.png')
 				//显示登录的状态
-				$('.personage').css('display', 'block')
-				$('.yet-login').css('display', 'none')
-				document.getElementsByClassName('personage')[0].addEventListener('tap', function() {
-					mui.openWindow({
-						url: 'login.html',
-						id: 'login.html',
-						waiting: {
-							autoShow: false, //自动显示等待框，默认为true		
-						}
-					})
-				})
+				// $('.personage').css('display', 'block')
+				// $('.yet-login').css('display', 'none')
+				// document.getElementsByClassName('personage')[0].addEventListener('tap', function() {
+				// 	mui.openWindow({
+				// 		url: 'login.html',
+				// 		id: 'login.html',
+				// 		waiting: {
+				// 			autoShow: false, //自动显示等待框，默认为true		
+				// 		}
+				// 	})
+				// })
 			}
 		}
 	})
 }
 
 //判断是否是登录状态
+document.getElementsByClassName('personage')[0].addEventListener('tap', function() {
+	var id = storge.getlocalStorage('id')
+	if (id == '') {
+		mui.openWindow({
+			url: 'login.html',
+			id: 'login.html',
+			waiting: {
+				autoShow: false, //自动显示等待框，默认为true		
+			}
+		})
+	} else {
+		mui.openWindow({
+			url: 'per_operation.html',
+			id: 'per_operation.html',
+			waiting: {
+				autoShow: false, //自动显示等待框，默认为true		
+			}
+		})
+	}
+})

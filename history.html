@@ -7,6 +7,43 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/history.css" />
+		<style type="text/css">
+			.mui-media {
+				font-size: 14px;
+			}
+
+			.mui-table-view .mui-media-object {
+				max-width: initial;
+				width: 90px;
+				height: 70px;
+			}
+
+			.meta-info {
+				position: absolute;
+				left: 115px;
+				right: 15px;
+				bottom: 8px;
+				color: #8f8f94;
+			}
+
+			.meta-info .author,
+			.meta-info .time {
+				display: inline-block;
+			}
+
+			.meta-info .time {
+				float: right;
+			}
+
+			.mui-table-view:before,
+			.mui-table-view:after {
+				height: 0;
+			}
+
+			.mui-content>.mui-table-view:first-child {
+				margin-top: 1px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -15,68 +52,166 @@
 			<h1 class="mui-title">历史记录</h1>
 			<span class="mui-pull-right">清空</span>
 		</header>
-		<div class="mui-content">
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="images/fw/Household%20cleaning01.jpg">
-						<div class="mui-media-body">
-							<div class="title">
-								<p>深度保洁</p>
-								<div class="time mui-pull-right">
-									<span style="background: #ff7871;color: #fff;">最快上门</span>
-									<span style="color: #e94840;background: #fff5f5;"> 2小时 </span>
+		<div class="mui-content" id="news">
+			<!--列表信息流 开始-->
+			<div id="list" class="mui-scroll-wrapper" style="top:44px">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media" v-for="item in items">
+							<a href="javascript:;" :data-guid="item.guid">
+								<img class="mui-media-object mui-pull-left" :src="item.url">
+								<div class="mui-media-body">
+									<div class="title">
+										<p>{{item.title}}</p>
+										<div class="time mui-pull-right">
+											<span style="background: #ff7871;color: #fff;">最快上门</span>
+											<span style="color: #e94840;background: #fff5f5;"> {{item.time}} </span>
+										</div>
+									</div>
+									<p class="mui-ellipsis">{{item.content}}</p>
+									<div id="price">
+										<i>{{item.price}}</i>{{item.unit}}
+									</div>
+									<div class="relevant_information">
+										<p class="mui-pull-left">
+											{{item.shopping}}
+											<span class="mui-icon mui-icon-forward" id="left-ico"></span>
+										</p>
+										<span class="mui-pull-right">好评{{item.evaluate}}</span>
+										<span class="mui-pull-right">已售{{item.volume}}</span>
+									</div>
 								</div>
-							</div>
-							<p class="mui-ellipsis">服务内容</p>
-							<div id="price">
-								<i>20</i>/元
-							</div>
-							<div class="relevant_information">
-								<p class="mui-pull-left">
-									到位直选
-									<span class="mui-icon mui-icon-forward" id="left-ico"></span>
-								</p>
-								<span class="mui-pull-right">好评99</span>
-								<span class="mui-pull-right">已售99</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="images/fw/Household%20cleaning01.jpg">
-						<div class="mui-media-body">
-							<div class="title">
-								<p>深度保洁</p>
-								<div class="time mui-pull-right">
-									<span style="background: #ff7871;color: #fff;">最快上门</span>
-									<span style="color: #e94840;background: #fff5f5;"> 2小时 </span>
-								</div>
-							</div>
-							<p class="mui-ellipsis">服务内容</p>
-							<div id="price">
-								<i>20</i>/元
-							</div>
-							<div class="relevant_information">
-								<p class="mui-pull-left">
-									到位直选
-									<span class="mui-icon mui-icon-forward" id="left-ico"></span>
-								</p>
-								<span class="mui-pull-right">好评99</span>
-								<span class="mui-pull-right">已售99</span>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<script src="js/mui.js"></script>
-		<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--列表信息流 结束-->
+			<script src="js/mui.js"></script>
+			<script src="js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				var lastId = '',
+					minId = ''; //最新新闻的id 
+
+
+				//mui初始化，配置下拉刷新
+				mui.init({
+					pullRefresh: {
+						container: '#list',
+						down: {
+							style: 'circle',
+							offset: '0px',
+							auto: true,
+							contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+							callback: pulldownRefresh
+						},
+						up: {
+							contentrefresh: '正在加载...',
+							contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+							callback: pullupRefresh
+						}
+					}
+				});
+
+				/**
+				 *  下拉刷新获取最新列表 
+				 */
+				function pulldownRefresh() {
+
+					if (window.plus && plus.networkinfo.getCurrentType() === plus.networkinfo.CONNECTION_NONE) {
+						plus.nativeUI.toast('似乎已断开与互联网的连接', {
+							verticalAlign: 'top'
+						});
+						return;
+					}
+
+					var data = {
+						column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
+					}
+
+					if (lastId) { //说明已有数据，目前处于下拉刷新，增加时间戳，触发服务端立即刷新，返回最新数据
+						data.lastId = lastId;
+						data.time = new Date().getTime() + "";
+					}
+
+					//请求最新列表信息流
+					mui.getJSON("http://120.55.103.137/userhistory", data, function(rsp) {
+						mui('#list').pullRefresh().endPulldownToRefresh();
+						console.log(rsp)
+						if (rsp && rsp.json.length > 0) {
+							lastId = rsp.json[0]._id; //保存最新消息的id，方便下拉刷新时使用
+							if (!minId) { //首次拉取列表时保存最后一条消息的id，方便上拉加载时使用
+								minId = rsp.json[rsp.json.length - 1]._id;
+							}
+							news.items = convert(rsp.json).concat(news.items);
+						}
+					});
+					//关闭上拉，下拉
+					// mui('#list').pullRefresh().endPullupToRefresh(true);
+				}
+
+				/**
+				 * 上拉加载拉取历史列表 
+				 */
+				function pullupRefresh() {
+					var data = {
+						column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
+					};
+
+					if (minId) { //说明已有数据，目前处于上拉加载，传递当前minId 返回历史数据
+						data.minId = minId;
+						data.time = new Date().getTime() + "";
+						data.pageSize = 10;
+					}
+					//请求历史列表信息流
+					mui.getJSON("http://120.55.103.137/userhistory", data, function(rsp) {
+						mui('#list').pullRefresh().endPullupToRefresh();
+						if (rsp && rsp.json.length > 0) {
+							console.log(rsp.json)
+							minId = rsp.json[rsp.json.length - 1]._id; //保存最后一条消息的id，上拉加载时使用
+							news.items = news.items.concat(convert(rsp.json));
+						}
+					});
+
+				}
+				/**
+				 * 1、将服务端返回数据，转换成前端需要的格式
+				 * 2、若服务端返回格式和前端所需格式相同，则不需要改功能
+				 * 
+				 * @param {Array} items 
+				 */
+				function convert(items) {
+					var newItems = [];
+					items.forEach(function(item) {
+						newItems.push({
+							title: item.title,
+							search: item.search,
+							price: item.price,
+							unit: item.unit,
+							url: item.url,
+							time: item.time,
+							content: item.content,
+							type_id: item.type_id,
+							shopping: item.shopping,
+							volume: item.volume,
+							evaluate: item.evaluate,
+							ico: item.ico,
+						});
+					});
+					return newItems;
+				}
+
+				var news = new Vue({
+					el: '#news',
+					data: {
+						banner: {}, //顶部banner数据
+						items: [] //列表信息流数据
+					}
+				});
+			</script>
+
 	</body>
 
 </html>
